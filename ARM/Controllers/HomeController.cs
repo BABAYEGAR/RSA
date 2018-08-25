@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ARM.Models;
 using ARM.Models.Authentication;
+using ARM.Models.Services;
 using Microsoft.AspNetCore.Hosting;
 
 namespace ARM.Controllers
@@ -21,10 +22,13 @@ namespace ARM.Controllers
         public IActionResult Index()
         {
 
-         
             return View();
         }
-
+        [Route("Retirement_Calculator/Profiling")]
+        public IActionResult Profiler()
+        {
+            return View();
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
