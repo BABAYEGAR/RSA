@@ -73,7 +73,7 @@ namespace ARM.Models.Application
         public decimal PaymentPerVoluntaryContributions { get; set; }
 
         [Required(ErrorMessage = "The field is required!")]
-        [DisplayName("What is the savings balanace in yoor pension pot right now?")]
+        [DisplayName("What is the savings balanace in your pension pot right now?")]
         public decimal CurrentRetirementSavingBalance { get; set; }
 
         [Required(ErrorMessage = "The field is required!")]

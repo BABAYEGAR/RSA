@@ -1,14 +1,971 @@
 ﻿@{
-    ViewData["Title"] = "ARM PENSIONS CALC | Home";
+    Layout = null;
 }
-@{
-    await Html.RenderPartialAsync("Partials/LandingSlider");
-}
-@{
-    await Html.RenderPartialAsync("Partials/LandingAbout");
-}
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.goodlayers.com/financity/demo2/wp-content/cache/minify/23cc2.default.include.661129.css" media="all" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <title>ARM Pensions | Calculator</title>
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="Financity &raquo; Feed" href="https://demo.goodlayers.com/financity/demo2/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Financity &raquo; Comments Feed" href="https://demo.goodlayers.com/financity/demo2/comments/feed/" />
 
-<div class="clearfix"></div>
-@{
-    await Html.RenderPartialAsync("Partials/LandingFeatures");
-}
+    <style type="text/css">
+                /*
+                    img.wp-smiley,img.emoji {
+                        display: inline !important;
+                        border: none !important;
+                        box-shadow: none !important;
+                        height: 1em !important;
+                        width: 1em !important;
+                        margin: 0 .07em !important;
+                        vertical-align: -0.1em !important;
+                        background: none !important;
+                        padding: 0 !important
+                    }
+        */
+    </style>
+    <link rel='stylesheet' id='contact-form-7-css' href='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='gdlr-core-google-font-css' href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7COpen+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CAsap%3Aregular%2Citalic%2C500%2C500italic%2C700%2C700italic&#038;subset=latin-ext%2Cvietnamese%2Clatin%2Cgreek%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext&#038;ver=4.9.8' type='text/css' media='all' />
+    <link rel='stylesheet' id='rs-plugin-settings-css' href='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/revslider/public/assets/css/settings.css' type='text/css' media='all' />
+    <style id='rs-plugin-settings-inline-css' type='text/css'>
+        #rs-demo-id {
+        }
+    </style>
+    <link rel='stylesheet' id='woocommerce-layout-css' href='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css' href='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/woocommerce/assets/css/woocommerce.css' type='text/css' media='all' />
+    <style id='woocommerce-inline-inline-css' type='text/css'>
+        .woocommerce form .form-row .required {
+            visibility: visible
+        }
+    </style>
+    <link rel='stylesheet' id='financity-style-core-css' href='https://cdn.goodlayers.com/financity/demo2/wp-content/themes/financity/css/style-core.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='financity-custom-style-css' href='~/Landing/wp-content/uploads/financity-style-custom.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='gdlr-core-plugin-css' href='https://demo.goodlayers.com/financity/demo2/wp-content/plugins/goodlayers-core/plugins/combine/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='gdlr-core-page-builder-css' href='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/goodlayers-core/include/css/page-builder.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='~/Landing/assets/css/custom.css' type='text/css' media='all' />
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-includes/js/jquery/jquery.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js'></script>
+
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/snazzy-maps/snazzymaps.js'></script>
+    <!--[if lt IE 9]> <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/themes/financity/js/html5.js'></script> <![endif]-->
+    <link rel="canonical" href="https://demo.goodlayers.com/financity/demo2/" />
+    <link rel='shortlink' href='https://demo.goodlayers.com/financity/demo2/' />
+    <link rel="alternate" type="application/json+oembed" href="https://demo.goodlayers.com/financity/demo2/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.goodlayers.com%2Ffinancity%2Fdemo2%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="https://demo.goodlayers.com/financity/demo2/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.goodlayers.com%2Ffinancity%2Fdemo2%2F&#038;format=xml" />
+    <noscript>
+        <style>
+                        /*
+                            .woocommerce-product-gallery {
+                                opacity: 1 !important
+                            }
+            */
+        </style>
+    </noscript>
+    <style type="text/css">
+                /*
+                    .recentcomments a {
+                        display: inline !important;
+                        padding: 0 !important;
+                        margin: 0 !important
+                    }
+        */
+    </style>
+
+
+
+
+    <script type="text/javascript" src="~/Landing/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="~/Landing/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="~/Landing/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="~/Landing/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="~/Landing/wp-content/plugins/revslider/public/assets/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="~/Landing/assets/js/scripts.js"></script>
+
+</head>
+<body class="home page-template-default page page-id-5514 gdlr-core-body woocommerce-no-js financity-body financity-body-front financity-full gdlr-core-link-to-lightbox">
+    <div class="financity-mobile-header-wrap">
+        <div class="financity-mobile-header financity-header-background financity-style-slide" id="financity-mobile-header">
+            <div class="financity-mobile-header-container financity-container">
+                <div class="financity-logo  financity-item-pdlr">
+                    <div class="financity-logo-inner">
+                        <a href="#">
+                            <img src="~/Landing/wp-content/uploads/2017/09/logo.png" alt="" width="211" height="48" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="financity-body-outer-wrapper ">
+        <div class="financity-body-wrapper clearfix  financity-with-transparent-header financity-with-frame">
+            <div class="financity-header-background-transparent">
+                <div class="financity-top-bar">
+                    <div class="financity-top-bar-background"></div>
+                    <div class="financity-top-bar-container clearfix financity-container ">
+                        <div class="financity-top-bar-left financity-item-pdlr">
+                            <span class="gdlr-core-dropdown-tab gdlr-core-js clearfix">
+                                <span class="gdlr-core-dropdown-tab-title">
+                                    <span class="gdlr-core-head">English</span>
+                                    <span class="gdlr-core-dropdown-tab-head-wrap">
+                                        <span class="gdlr-core-dropdown-tab-head gdlr-core-active" data-index="0">English</span>
+                                        <span class="gdlr-core-dropdown-tab-head " data-index="1">German</span>
+                                    </span>
+                                </span>
+                                <span class="financity-top-bar-divider financity-right-margin"></span>
+                                <span class="gdlr-core-dropdown-tab-content-wrap">
+                                    <span class="gdlr-core-dropdown-tab-content gdlr-core-active" data-index="0">
+                                        <i class="fa fa-clock-o" style="font-size: 17px;color: #f4ede1;margin-right: 10px;"></i>
+                                        <strong>Mon - Fri 10:00-18:00</strong>
+                                        <i class="fa fa-phone" style="font-size: 17px;color: #f4ede1;margin-left: 20px;margin-right: 10px;"></i>
+                                        <strong>+234-888-888-9999</strong>
+                                    </span>
+                                    <span class="gdlr-core-dropdown-tab-content " data-index="1">
+                                        <i class="fa fa-clock-o" style="font-size: 17px;color: #f4ede1;margin-right: 10px;"></i>
+                                        <strong>Mon - Fri 10:00-18:00 </strong>
+                                        <i class="fa fa-phone" style="font-size: 17px;color: #f4ede1;margin-left: 20px;margin-right: 10px;"></i>
+                                        <strong>+234-888-888-9999</strong>
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="financity-top-bar-right financity-item-pdlr">
+                            <div class="financity-top-bar-right-text">
+                                <i class="fa fa-envelope-open-o" style="font-size: 17px;color: #f4ede1;margin-left: 20px;margin-right: 14px;"></i>
+                                <strong>info@info.com</strong>
+                            </div>
+                            <span class="financity-top-bar-divider financity-left-margin"></span>
+                            <div class="financity-top-bar-right-social">
+                                <a href="#" target="_blank" class="financity-top-bar-social-icon" title="facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#" target="_blank" class="financity-top-bar-social-icon" title="google-plus">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                                <a href="#" target="_blank" class="financity-top-bar-social-icon" title="pinterest">
+                                    <i class="fa fa-pinterest-p"></i>
+                                </a>
+                                <a href="#" target="_blank" class="financity-top-bar-social-icon" title="twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank" class="financity-top-bar-social-icon" title="instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <header class="financity-header-wrap financity-header-style-plain  financity-style-menu-right financity-sticky-navigation financity-style-slide" data-navigation-offset="75px">
+                    <div class="financity-header-background"></div>
+                    <div class="financity-header-container  financity-container">
+                        <div class="financity-header-container-inner clearfix">
+                            <div class="financity-logo  financity-item-pdlr">
+                                <div class="financity-logo-inner">
+                                    <a href="@Url.Action("Index","Home")">
+                                        <img src="~/Landing/wp-content/themes/financity/images/logo.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="financity-page-wrapper" id="financity-page-wrapper">
+                <div class="gdlr-core-page-builder-body">
+                    <div class="gdlr-core-pbf-wrapper " style="padding: 58px 0px 0px 0px;" id="gdlr-core-wrapper-1">
+                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #89014c ;"></div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-revolution-slider-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 0px;">
+                                        <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+                                            <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8">
+                                                <ul>
+                                                    <li data-index="rs-2" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="https://cdn.goodlayers.com/financity/demo2/wp-content/uploads/revslider/homepage1/slider-2-1-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                                                        <img src="~/Landing/wp-content/uploads/revslider/hompage1/slider-2-1.jpg" alt="" title="Homepage 2" data-bgposition="center top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="110" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                                                        <div class="tp-caption   tp-resizeme" id="slide-2-layer-1" data-x="28" data-y="center" data-voffset="-20" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 128px; line-height: autopx; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;">manage pension</div>
+                                                        <div class="tp-caption   tp-resizeme" id="slide-2-layer-6" data-x="37" data-y="center" data-voffset="-95" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap; font-size: 60px; line-height: autopx; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;">we help</div>
+                                                        <div class="tp-caption   tp-resizeme" id="slide-2-layer-2" data-x="38" data-y="center" data-voffset="107" data-width="['724']" data-height="['65']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":280,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 7; min-width: 724px; max-width: 724px; max-width: 65px; max-width: 65px; white-space: normal; font-size: 20px; line-height: 32px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Open Sans;">We help you managing asset, provide financial advise. Leave money issue with us and focus on your core business.</div>
+
+
+                                                        <a href="@Url.Action("Calculate")"><div class="tp-caption rev-btn " id="slide-2-layer-4" data-x="36" data-y="center" data-voffset="196" data-width="['auto']" data-height="['auto']" data-type="button" data-responsive_offset="on" data-frames='[{"delay":640,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(255,255,255);bg:rgb(140,0,74);bs:solid;bw:0 0 0 0;"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[21,21,21,21]" data-paddingright="[39,39,39,39]" data-paddingbottom="[21,21,21,21]" data-paddingleft="[39,39,39,39]" style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 17px; font-weight: 700; color: #8c004a; letter-spacing: 0.5px;font-family:Asap;background-color:rgb(255,255,255);border-color:rgba(0,0,0,1);border-radius:30px 30px 30px 30px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">Calculate Pension</div></a>
+
+                                                    </li>
+                                                    <li data-index="rs-1" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="https://cdn.goodlayers.com/financity/demo2/wp-content/uploads/revslider/homepage1/slider-1-1-1-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                                                        <img src="~/Landing/wp-content/uploads/revslider/hompage1/slider-1-1-1.jpg" alt="" title="Homepage 2" data-bgposition="center top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="110" data-rotatestart="0" data-rotateend="0" data-blurstart="0" data-blurend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                                                        <div class="tp-caption   tp-resizeme" id="slide-1-layer-1" data-x="24" data-y="center" data-voffset="-19" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":10,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 130px; line-height: autopx; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;">ARM Pensions</div>
+                                                        <div class="tp-caption   tp-resizeme" id="slide-1-layer-2" data-x="37" data-y="center" data-voffset="85" data-width="['642']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":280,"speed":300,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; min-width: 642px; max-width: 642px; white-space: normal; font-size: 20px; line-height: 32px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Open Sans;">We help you managing asset, provide financial advise. Leave money issue with us and focus on your core business.</div>
+                                                        <div class="tp-caption rev-btn " id="slide-1-layer-3" data-x="36" data-y="center" data-voffset="179" data-width="['auto']" data-height="['auto']" data-type="button" data-responsive_offset="on" data-frames='[{"delay":490,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(37,64,153);bg:rgb(255,255,255);"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[19,19,19,19]" data-paddingright="[37,37,37,37]" data-paddingbottom="[19,19,19,19]" data-paddingleft="[37,37,37,37]" style="z-index: 7; white-space: nowrap; font-size: 16px; line-height: 17px; font-weight: 700; color: rgba(255,255,255,1); letter-spacing: 0.5px;font-family:Asap;background-color:rgba(55,64,176,0);border-color:rgb(255,255,255);border-style:solid;border-width:2px 2px 2px 2px;border-radius:30px 30px 30px 30px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">Learn More</div>
+                                                        <a href="@Url.Action("Calculate")"><div class="tp-caption rev-btn" id="slide-1-layer-4" data-x="213" data-y="center" data-voffset="180" data-width="['auto']" data-height="['auto']" data-type="button" data-responsive_offset="on" data-frames='[{"delay":640,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(140,0,74);bg:rgba(255,255,255,1);bs:solid;bw:0 0 0 0;"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[21,21,21,21]" data-paddingright="[39,39,39,39]" data-paddingbottom="[21,21,21,21]" data-paddingleft="[39,39,39,39]" style="z-index: 8; white-space: nowrap; font-size: 16px; line-height: 17px; font-weight: 700; color: rgba(255,255,255,1); letter-spacing: 0.5px;font-family:Asap;background-color:rgb(140,0,74);border-color:rgba(0,0,0,1);border-radius:30px 30px 30px 30px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">Calculate Pension</div></a>
+                                                    </li>
+                                                </ul>
+                                                <script>
+                                                        /*<![CDATA[*/
+                                                        var htmlDiv = document.getElementById("rs-plugin-settings-inline-css");
+                                                        var htmlDivCss = "";
+                                                        if (htmlDiv) {
+                                                            htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                                                        } else {
+                                                            var htmlDiv = document.createElement("div");
+                                                            htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+                                                            document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+                                                        }
+                                                        /*]]>*/
+                                                </script>
+                                                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                                            </div>
+                                            <script>
+                                                    /*<![CDATA[*/
+                                                    var htmlDiv = document.getElementById("rs-plugin-settings-inline-css");
+                                                    var htmlDivCss = "";
+                                                    if (htmlDiv) {
+                                                        htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                                                    } else {
+                                                        var htmlDiv = document.createElement("div");
+                                                        htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+                                                        document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+                                                    }
+                                                    /*]]>*/
+                                            </script>
+                                            <script type="text/javascript">
+                                                    /*<![CDATA[*/
+                                                    if (setREVStartSize !== undefined)
+                                                        setREVStartSize({
+                                                            c: '#rev_slider_1_1',
+                                                            gridwidth: [1300],
+                                                            gridheight: [790],
+                                                            sliderLayout: 'auto'
+                                                        });
+                                                    var revapi1, tpj;
+                                                    (function() {
+                                                        if (!/loaded|interactive|complete/.test(document.readyState))
+                                                            document.addEventListener("DOMContentLoaded", onLoad);
+                                                        else
+                                                            onLoad();
+                                                        function onLoad() {
+                                                            if (tpj === undefined) {
+                                                                tpj = jQuery;
+                                                                if ("off" == "on")
+                                                                    tpj.noConflict();
+                                                            }
+                                                            if (tpj("#rev_slider_1_1").revolution == undefined) {
+                                                                revslider_showDoubleJqueryError("#rev_slider_1_1");
+                                                            } else {
+                                                                revapi1 = tpj("#rev_slider_1_1").show().revolution({
+                                                                    sliderType: "standard",
+                                                                    jsFileLocation: "https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/revslider/public/assets/js/",
+                                                                    sliderLayout: "auto",
+                                                                    dottedOverlay: "none",
+                                                                    delay: 9000,
+                                                                    navigation: {
+                                                                        keyboardNavigation: "off",
+                                                                        keyboard_direction: "horizontal",
+                                                                        mouseScrollNavigation: "off",
+                                                                        mouseScrollReverse: "default",
+                                                                        onHoverStop: "off",
+                                                                        arrows: {
+                                                                            style: "uranus",
+                                                                            enable: true,
+                                                                            hide_onmobile: false,
+                                                                            hide_onleave: true,
+                                                                            hide_delay: 200,
+                                                                            hide_delay_mobile: 1200,
+                                                                            tmp: '',
+                                                                            left: {
+                                                                                h_align: "left",
+                                                                                v_align: "center",
+                                                                                h_offset: 20,
+                                                                                v_offset: 0
+                                                                            },
+                                                                            right: {
+                                                                                h_align: "right",
+                                                                                v_align: "center",
+                                                                                h_offset: 20,
+                                                                                v_offset: 0
+                                                                            }
+                                                                        },
+                                                                        bullets: {
+                                                                            enable: true,
+                                                                            hide_onmobile: false,
+                                                                            style: "uranus",
+                                                                            hide_onleave: false,
+                                                                            direction: "horizontal",
+                                                                            h_align: "center",
+                                                                            v_align: "bottom",
+                                                                            h_offset: 0,
+                                                                            v_offset: 30,
+                                                                            space: 10,
+                                                                            tmp: '<span class="tp-bullet-inner"></span>'
+                                                                        }
+                                                                    },
+                                                                    visibilityLevels: [1240, 1024, 778, 480],
+                                                                    gridwidth: 1300,
+                                                                    gridheight: 790,
+                                                                    lazyType: "none",
+                                                                    parallax: {
+                                                                        type: "mouse",
+                                                                        origo: "enterpoint",
+                                                                        speed: 400,
+                                                                        speedbg: 0,
+                                                                        speedls: 0,
+                                                                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
+                                                                    },
+                                                                    shadow: 0,
+                                                                    spinner: "off",
+                                                                    stopLoop: "off",
+                                                                    stopAfterLoops: -1,
+                                                                    stopAtSlide: -1,
+                                                                    shuffle: "off",
+                                                                    autoHeight: "off",
+                                                                    disableProgressBar: "on",
+                                                                    hideThumbsOnMobile: "off",
+                                                                    hideSliderAtLimit: 0,
+                                                                    hideCaptionAtLimit: 0,
+                                                                    hideAllCaptionAtLilmit: 0,
+                                                                    debugMode: false,
+                                                                    fallbacks: {
+                                                                        simplifyAll: "off",
+                                                                        nextSlideOnWindowFocus: "off",
+                                                                        disableFocusListener: false,
+                                                                    }
+                                                                });
+                                                            }
+                                                            ;
+                                                        }
+                                                        ;
+                                                    }());
+                                                    /*]]>*/
+                                            </script>
+                                            <script>
+                                                    /*<![CDATA[*/
+                                                    var htmlDivCss = unescape("%23rev_slider_1_1%20.uranus.tparrows%20%7B%0A%20%20width%3A50px%3B%0A%20%20height%3A50px%3B%0A%20%20background%3Argba%28255%2C255%2C255%2C0%29%3B%0A%20%7D%0A%20%23rev_slider_1_1%20.uranus.tparrows%3Abefore%20%7B%0A%20width%3A50px%3B%0A%20height%3A50px%3B%0A%20line-height%3A50px%3B%0A%20font-size%3A40px%3B%0A%20transition%3Aall%200.3s%3B%0A-webkit-transition%3Aall%200.3s%3B%0A%20%7D%0A%20%0A%20%20%23rev_slider_1_1%20.uranus.tparrows%3Ahover%3Abefore%20%7B%0A%20%20%20%20opacity%3A0.75%3B%0A%20%20%7D%0A%23rev_slider_1_1%20.uranus%20.tp-bullet%7B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20box-shadow%3A%200%200%200%202px%20rgba%28255%2C%20255%2C%20255%2C%200%29%3B%0A%20%20-webkit-transition%3A%20box-shadow%200.3s%20ease%3B%0A%20%20transition%3A%20box-shadow%200.3s%20ease%3B%0A%20%20background%3Atransparent%3B%0A%20%20width%3A15px%3B%0A%20%20height%3A15px%3B%0A%7D%0A%23rev_slider_1_1%20.uranus%20.tp-bullet.selected%2C%0A%23rev_slider_1_1%20.uranus%20.tp-bullet%3Ahover%20%7B%0A%20%20box-shadow%3A%200%200%200%202px%20rgba%28255%2C%20255%2C%20255%2C1%29%3B%0A%20%20border%3Anone%3B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20background%3Atransparent%3B%0A%7D%0A%0A%23rev_slider_1_1%20.uranus%20.tp-bullet-inner%20%7B%0A%20%20-webkit-transition%3A%20background-color%200.3s%20ease%2C%20-webkit-transform%200.3s%20ease%3B%0A%20%20transition%3A%20background-color%200.3s%20ease%2C%20transform%200.3s%20ease%3B%0A%20%20top%3A%200%3B%0A%20%20left%3A%200%3B%0A%20%20width%3A%20100%25%3B%0A%20%20height%3A%20100%25%3B%0A%20%20outline%3A%20none%3B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20background-color%3A%20rgb%28255%2C%20255%2C%20255%29%3B%0A%20%20background-color%3A%20rgba%28255%2C%20255%2C%20255%2C%200.3%29%3B%0A%20%20text-indent%3A%20-999em%3B%0A%20%20cursor%3A%20pointer%3B%0A%20%20position%3A%20absolute%3B%0A%7D%0A%0A%23rev_slider_1_1%20.uranus%20.tp-bullet.selected%20.tp-bullet-inner%2C%0A%23rev_slider_1_1%20.uranus%20.tp-bullet%3Ahover%20.tp-bullet-inner%7B%0A%20transform%3A%20scale%280.4%29%3B%0A%20-webkit-transform%3A%20scale%280.4%29%3B%0A%20background-color%3Argb%28255%2C%20255%2C%20255%29%3B%0A%7D%0A");
+                                                    var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+                                                    if (htmlDiv) {
+                                                        htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+                                                    } else {
+                                                        var htmlDiv = document.createElement('div');
+                                                        htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+                                                        document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+                                                    }
+                                                    /*]]>*/
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 0px 0px;" data-skin="Column Service HP 1">
+                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #f5f5f5 ;">
+                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-size: cover;background-position: center;" data-parallax-speed="0.2"></div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
+                                <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first" data-skin="Hp2 Column Service">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 80px 40px 30px 60px;" data-sync-height="service-height" data-sync-height-center>
+                                        <div class="gdlr-core-pbf-background-wrap">
+                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(Landing/wp-content/uploads/2017/09/hp-2-service-bg-1.jpg);background-size: cover;background-position: center;" data-parallax-speed="0.1"></div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-column-service-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-column-service-icon-left gdlr-core-no-caption gdlr-core-item-pdlr" style="padding-bottom: 30px;">
+                                                    <div class="gdlr-core-column-service-media gdlr-core-media-image" style="margin-top: 10px;margin-right: 30px;">
+                                                        <img src="~/Landing/wp-content/uploads/2017/09/hp2-icon-1.png" alt="" width="45" height="45" />
+                                                    </div>
+                                                    <div class="gdlr-core-column-service-content-wrapper">
+                                                        <div class="gdlr-core-column-service-title-wrap">
+                                                            <h3 class="gdlr-core-column-service-title" style="font-size: 22px;font-weight: 600;letter-spacing: 0px;text-transform: none;">
+                                                                On Time  <br />Service.
+                                                            </h3>
+                                                        </div>
+                                                        <div class="gdlr-core-column-service-content" style="font-size: 17px;">
+                                                            <p>Transforming distribution and marketing with key capabilities in customer insight and analytics.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-column gdlr-core-column-20" data-skin="Hp2 Column Service">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 80px 40px 30px 60px;" data-sync-height="service-height" data-sync-height-center>
+                                        <div class="gdlr-core-pbf-background-wrap">
+                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(Landing/wp-content/uploads/2017/09/hp-2-service-bg-2.jpg);background-size: cover;background-position: center;" data-parallax-speed="0.1"></div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-column-service-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-column-service-icon-left gdlr-core-no-caption gdlr-core-item-pdlr" style="padding-bottom: 30px;">
+                                                    <div class="gdlr-core-column-service-media gdlr-core-media-image" style="margin-top: 10px;margin-right: 30px;">
+                                                        <img src="~/Landing/wp-content/uploads/2017/09/hp2-icon-2.png" alt="" width="45" height="45" />
+                                                    </div>
+                                                    <div class="gdlr-core-column-service-content-wrapper">
+                                                        <div class="gdlr-core-column-service-title-wrap">
+                                                            <h3 class="gdlr-core-column-service-title" style="font-size: 22px;font-weight: 600;letter-spacing: 0px;text-transform: none;">
+                                                                A Team Of  <br />Professionals.
+                                                            </h3>
+                                                        </div>
+                                                        <div class="gdlr-core-column-service-content" style="font-size: 17px;">
+                                                            <p>Transforming distribution and marketing with key capabilities in customer insight and analytics.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-column gdlr-core-column-20" data-skin="Hp2 Column Service 2">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 80px 40px 30px 60px;" data-sync-height="service-height" data-sync-height-center>
+                                        <div class="gdlr-core-pbf-background-wrap">
+                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(Landing/wp-content/uploads/2017/09/hp-2-service-bg-3.jpg);background-size: cover;background-position: center;" data-parallax-speed="0.1"></div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-column-service-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-column-service-icon-left gdlr-core-no-caption gdlr-core-item-pdlr" style="padding-bottom: 30px;">
+                                                    <div class="gdlr-core-column-service-media gdlr-core-media-image" style="margin-top: 10px;margin-right: 30px;">
+                                                        <img src="~/Landing/wp-content/uploads/2017/09/hp2-icon-3.png" alt="" width="45" height="45" />
+                                                    </div>
+                                                    <div class="gdlr-core-column-service-content-wrapper">
+                                                        <div class="gdlr-core-column-service-title-wrap">
+                                                            <h3 class="gdlr-core-column-service-title" style="font-size: 22px;font-weight: 600;letter-spacing: 0px;text-transform: none;">
+                                                                Analyze Your  <br />Business.
+                                                            </h3>
+                                                        </div>
+                                                        <div class="gdlr-core-column-service-content" style="font-size: 17px;">
+                                                            <p>Transforming distribution and marketing with key capabilities in customer insight and analytics.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="margin: 30px 0px 0px 0px;">
+                        <div class="gdlr-core-pbf-background-wrap">
+                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-repeat: no-repeat;background-position: center;" data-parallax-speed="0.04"></div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 27px;">
+                                        <div class="gdlr-core-title-item-title-wrap ">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 44px;font-weight: 600;letter-spacing: 0px;text-transform: none;color: #232323;">
+                                                Services We Provide<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                        <span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 14px;font-style: normal;letter-spacing: 2px;text-transform: uppercase;margin-top: 5px;">Covered in these areas</span>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal" style="padding-bottom: 25px;">
+                                        <div class="gdlr-core-divider-container gdlr-core-center-align" style="max-width: 54px;">
+                                            <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #560632;border-bottom-width: 4px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="margin: 0px 0px 0px 0px;padding: 0px 0px 160px 0px;">
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-hover-box-item gdlr-core-item-pdb clearfix  gdlr-core-left-align" style="padding-bottom: 20px;">
+                                        <div class="gdlr-core-hover-box-column gdlr-core-item-pdlr gdlr-core-item-mgb  gdlr-core-column-20 gdlr-core-column-first">
+                                            <div class="gdlr-core-hover-box  gdlr-core-outer-frame-element  clearfix" style="box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -moz-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -webkit-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); ">
+                                                <div class="gdlr-core-hover-box-thumbnail-top gdlr-core-media-image">
+                                                    <img src="~/Landing/wp-content/uploads/2017/09/hp2-service-1.jpg" alt="" width="700" height="423" />
+                                                </div>
+                                                <div class="gdlr-core-hover-box-content-wrap" style="padding-left: 35px;">
+                                                    <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 20px;text-transform: none;color: #560632;">Capital Markets</h3>
+                                                    <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="color: #898989;">
+                                                        <p>Providing insight-driven transformation to investment banks, wealth and asset managers, exchanges, clearing houses.</p>
+                                                    </div>
+                                                </div>
+                                                <a class="gdlr-core-hover-box-link" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-hover-box-column gdlr-core-item-pdlr gdlr-core-item-mgb  gdlr-core-column-20">
+                                            <div class="gdlr-core-hover-box  gdlr-core-outer-frame-element  clearfix" style="box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -moz-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -webkit-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); ">
+                                                <div class="gdlr-core-hover-box-thumbnail-top gdlr-core-media-image">
+                                                    <img src="~/Landing/wp-content/uploads/2017/09/hp2-service-2.jpg" alt="" width="700" height="423" />
+                                                </div>
+                                                <div class="gdlr-core-hover-box-content-wrap" style="padding-left: 35px;">
+                                                    <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 20px;text-transform: none;color: #560632;">Insurance</h3>
+                                                    <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="color: #898989;">
+                                                        <p>Providing insight-driven transformation to investment banks, wealth and asset managers, exchanges, clearing houses.</p>
+                                                    </div>
+                                                </div>
+                                                <a class="gdlr-core-hover-box-link" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-hover-box-column gdlr-core-item-pdlr gdlr-core-item-mgb  gdlr-core-column-20">
+                                            <div class="gdlr-core-hover-box  gdlr-core-outer-frame-element  clearfix" style="box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -moz-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -webkit-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); ">
+                                                <div class="gdlr-core-hover-box-thumbnail-top gdlr-core-media-image">
+                                                    <img src="~/Landing/wp-content/uploads/2017/09/hp2-service-3.jpg" alt="" width="700" height="423" />
+                                                </div>
+                                                <div class="gdlr-core-hover-box-content-wrap" style="padding-left: 35px;">
+                                                    <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 20px;text-transform: none;color: #560632;">Blockchain</h3>
+                                                    <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="color: #898989;">
+                                                        <p>Providing insight-driven transformation to investment banks, wealth and asset managers, exchanges, clearing houses.</p>
+                                                    </div>
+                                                </div>
+                                                <a class="gdlr-core-hover-box-link" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-hover-box-column gdlr-core-item-pdlr gdlr-core-item-mgb  gdlr-core-column-20 gdlr-core-column-first">
+                                            <div class="gdlr-core-hover-box  gdlr-core-outer-frame-element  clearfix" style="box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -moz-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -webkit-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); ">
+                                                <div class="gdlr-core-hover-box-thumbnail-top gdlr-core-media-image">
+                                                    <img src="~/Landing/wp-content/uploads/2017/09/hp2-service-4.jpg" alt="" width="700" height="423" />
+                                                </div>
+                                                <div class="gdlr-core-hover-box-content-wrap" style="padding-left: 35px;">
+                                                    <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 20px;text-transform: none;color: #560632;">Technology Advisory</h3>
+                                                    <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="color: #898989;">
+                                                        <p>Providing insight-driven transformation to investment banks, wealth and asset managers, exchanges, clearing houses.</p>
+                                                    </div>
+                                                </div>
+                                                <a class="gdlr-core-hover-box-link" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-hover-box-column gdlr-core-item-pdlr gdlr-core-item-mgb  gdlr-core-column-20">
+                                            <div class="gdlr-core-hover-box  gdlr-core-outer-frame-element  clearfix" style="box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -moz-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -webkit-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); ">
+                                                <div class="gdlr-core-hover-box-thumbnail-top gdlr-core-media-image">
+                                                    <img src="~/Landing/wp-content/uploads/2017/09/hp2-service-5.jpg" alt="" width="700" height="423" />
+                                                </div>
+                                                <div class="gdlr-core-hover-box-content-wrap" style="padding-left: 35px;">
+                                                    <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 20px;text-transform: none;color: #560632;">Finance &Risk</h3>
+                                                    <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="color: #898989;">
+                                                        <p>Providing insight-driven transformation to investment banks, wealth and asset managers, exchanges, clearing houses.</p>
+                                                    </div>
+                                                </div>
+                                                <a class="gdlr-core-hover-box-link" href="#"></a>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-hover-box-column gdlr-core-item-pdlr gdlr-core-item-mgb  gdlr-core-column-20">
+                                            <div class="gdlr-core-hover-box  gdlr-core-outer-frame-element  clearfix" style="box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -moz-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); -webkit-box-shadow: 0 0 74px rgba(10, 10, 10,0.07); ">
+                                                <div class="gdlr-core-hover-box-thumbnail-top gdlr-core-media-image">
+                                                    <img src="~/Landing/wp-content/uploads/2017/09/hp2-service-6.jpg" alt="" width="700" height="423" />
+                                                </div>
+                                                <div class="gdlr-core-hover-box-content-wrap" style="padding-left: 35px;">
+                                                    <h3 class="gdlr-core-hover-box-title gdlr-core-skin-title" style="font-size: 20px;text-transform: none;color: #560632;">Portfolio Management</h3>
+                                                    <div class="gdlr-core-hover-box-content gdlr-core-skin-content" style="color: #898989;">
+                                                        <p>Providing insight-driven transformation to investment banks, wealth and asset managers, exchanges, clearing houses.</p>
+                                                    </div>
+                                                </div>
+                                                <a class="gdlr-core-hover-box-link" href="#"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="margin: 0px 0px 0px 0px;padding: 110px 0px 225px 0px;" data-skin="Hp2 Column Service">
+                        <div class="gdlr-core-pbf-background-wrap">
+                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(Landing/wp-content/uploads/2017/09/hp2-about-bg.jpg);background-size: cover;background-position: center;" data-parallax-speed="0.1"></div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: -210px 0px 0px 0px;padding: 0px 0px 10px 0px;">
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align">
+                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-round" style="border-width: 0px;">
+                                                        <img src="~/Landing/wp-content/uploads/2017/09/hp2-about.jpg" alt="" width="731" height="443" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
+                                        <span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 15px;font-style: normal;letter-spacing: 1px;text-transform: uppercase;color: #a4a8db;">Our Little Story</span>
+                                        <div class="gdlr-core-title-item-title-wrap ">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 44px;font-weight: 700;letter-spacing: 0px;text-transform: none;color: #ffffff;">
+                                                Something About Us<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-columnize-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 20px;">
+                                        <div class="gdlr-core-columnize-item-content gdlr-core-skin-divider" style="font-size: 19px;column-count: 2;-moz-column-count: 2;-webkit-column-count: 2;column-gap: 50px;-moz-column-gap: 50px;-webkit-column-gap: 50px;column-rule-width: 0px;-moz-column-rule-width: 0px;-webkit-column-rule-width: 0px;">
+                                            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the wind I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian. I throw myself down among the tall grass by the trickling stream; and.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="margin: -160px 0px 0px 0px;padding: 0px 0px 0px 0px;" data-skin="Purple Personnel">
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " data-sync-height="half-height" data-sync-height-center>
+                                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #e277b2 ;">
+                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(Landing/wp-content/uploads/2017/09/shutterstock_372393523.jpg);opacity: 0.6;background-size: cover;background-position: center;" data-parallax-speed="0"></div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" style="padding-bottom: 0px;">
+                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" style="border-width: 0px;">
+                                                        <a class="gdlr-core-ilightbox gdlr-core-js " href="//www.youtube.com/embed/XygPdx9RwmM?wmode=transparent" data-type="iframe" data-options="width: 1280, height: 720">
+                                                            <img src="~/Landing/wp-content/uploads/2017/08/video-button.png" alt="" width="89" height="89" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 80px 40px 60px 50px;" data-sync-height="half-height">
+                                        <div class="gdlr-core-pbf-background-wrap" style="box-shadow: 0 0 74px rgba(12, 12, 12,0.07); -moz-box-shadow: 0 0 74px rgba(12, 12, 12,0.07); -webkit-box-shadow: 0 0 74px rgba(12, 12, 12,0.07); background-color: #ffffff ;"></div>
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
+                                                    <span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 15px;font-style: normal;letter-spacing: 2px;text-transform: uppercase;color: #dc80b6;">Did you know that</span>
+                                                    <div class="gdlr-core-title-item-title-wrap ">
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 43px;font-weight: 600;letter-spacing: 0px;text-transform: none;color: #89014c;">
+                                                            We are trusted by more than 5,000 clients<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 16px;">
+                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 17px;color: #73626c;">
+                                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. More than 25 years of experience working in the industry has enabled us to build our services and solutions in strategy, consulting, digital.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
+                                                    <a class="gdlr-core-button  gdlr-core-button-transparent gdlr-core-button-with-border" href="#" style="font-size: 16px;color: #89014c;padding: 14px 38px 19px 38px;text-transform: none;border-radius: 33px;-moz-border-radius: 33px;-webkit-border-radius: 33px;border-width: 2px 2px 2px 2px;border-color: #89014c;">
+                                                        <span class="gdlr-core-content">Read Our Story</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 95px 0px 55px 65px;" data-sync-height="half-height-2" data-sync-height-center>
+                                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #232323 ;"></div>
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 10px;">
+                                                    <div class="gdlr-core-title-item-title-wrap ">
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 42px;font-weight: 600;letter-spacing: 0px;text-transform: none;color: #ffffff;">
+                                                            We are an expert in <br />
+                                                            this field<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 7px;">
+                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 20px;color: #ffffff;">
+                                                        <p>
+                                                            Yet I feel that I never was a greater artist than now.<br />When, while the lovely valley teems.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-icon-list-item gdlr-core-item-pdlr gdlr-core-item-pdb ">
+                                                    <ul>
+                                                        <li class=" gdlr-core-skin-divider">
+                                                            <span class="gdlr-core-icon-list-icon-wrap">
+                                                                <i class="gdlr-core-icon-list-icon icon_check" style="color: #ffffff;font-size: 17px;width: 17px;"></i>
+                                                            </span>
+                                                            <span class="gdlr-core-icon-list-content" style="color: #bcbcbc;font-size: 17px;">Premium services and beyond your expectation</span>
+                                                        </li>
+                                                        <li class=" gdlr-core-skin-divider">
+                                                            <span class="gdlr-core-icon-list-icon-wrap">
+                                                                <i class="gdlr-core-icon-list-icon icon_check" style="color: #ffffff;font-size: 17px;width: 17px;"></i>
+                                                            </span>
+                                                            <span class="gdlr-core-icon-list-content" style="color: #bcbcbc;font-size: 17px;">Get the best support among all venders</span>
+                                                        </li>
+                                                        <li class=" gdlr-core-skin-divider">
+                                                            <span class="gdlr-core-icon-list-icon-wrap">
+                                                                <i class="gdlr-core-icon-list-icon icon_check" style="color: #ffffff;font-size: 17px;width: 17px;"></i>
+                                                            </span>
+                                                            <span class="gdlr-core-icon-list-content" style="color: #bcbcbc;font-size: 17px;">Full responsibility on all finances</span>
+                                                        </li>
+                                                        <li class=" gdlr-core-skin-divider">
+                                                            <span class="gdlr-core-icon-list-icon-wrap">
+                                                                <i class="gdlr-core-icon-list-icon icon_check" style="color: #ffffff;font-size: 17px;width: 17px;"></i>
+                                                            </span>
+                                                            <span class="gdlr-core-icon-list-content" style="color: #bcbcbc;font-size: 17px;">Tons of bonuses</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
+                                                    <a class="gdlr-core-button  gdlr-core-button-solid gdlr-core-button-no-border" href="#" style="font-size: 16px;color: #89014c;padding: 14px 38px 19px 38px;text-transform: none;border-radius: 33px;-moz-border-radius: 33px;-webkit-border-radius: 33px;background: #ffffff ;">
+                                                        <span class="gdlr-core-content">Read Our Story</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " data-sync-height="half-height-2">
+                                        <div class="gdlr-core-pbf-background-wrap">
+                                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(Landing/wp-content/uploads/2017/09/shutterstock_361397258.jpg);background-size: cover;background-position: center;" data-parallax-speed="0"></div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="padding: 130px 0px 70px 0px;" data-skin="HP Testimonial">
+                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #89014c ;">
+                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" style="background-image: url(Landing/wp-content/uploads/2017/09/hp2-testimonial-bg.jpg);background-size: cover;background-position: center;" data-parallax-speed="0.2"></div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom" style="max-width: 800px;">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-testimonial-item gdlr-core-item-pdb clearfix  gdlr-core-testimonial-style-center gdlr-core-item-pdlr">
+                                        <div class="gdlr-core-flexslider flexslider gdlr-core-js-2 gdlr-core-nav-style-middle-large" data-type="carousel" data-column="1" data-nav="bullet" data-vcenter-nav="1" data-disable-autoslide="1">
+                                            <div class="gdlr-core-block-item-title-wrap  gdlr-core-center-align gdlr-core-item-mglr" style="margin-bottom: 30px;">
+                                                <div class="gdlr-core-block-item-title-inner">
+                                                    <h3 class="gdlr-core-block-item-title" style="font-size: 48px;font-weight: 600;text-transform: none;letter-spacing: 0px;color: #ffffff;">Clients’ Testimonials</h3>
+                                                </div>
+                                                <div class="gdlr-core-flexslider-nav gdlr-core-round-style gdlr-core-absolute-center gdlr-core-right"></div>
+                                            </div>
+                                            <ul class="slides">
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-testimonial clearfix">
+                                                        <div class="gdlr-core-testimonial-content-wrap">
+                                                            <div class="gdlr-core-testimonial-content gdlr-core-info-font gdlr-core-skin-content" style="font-size: 21px;color: #c4c8ff;">
+                                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary.</p>
+                                                            </div>
+                                                            <div class="gdlr-core-testimonial-author-wrap clearfix">
+                                                                <div class="gdlr-core-testimonial-quote gdlr-core-quote-font gdlr-core-skin-icon" style="color: #ffffff;">&#8220;</div>
+                                                                <div class="gdlr-core-testimonial-author-content">
+                                                                    <div class="gdlr-core-testimonial-title gdlr-core-title-font gdlr-core-skin-title" style="color: #ffffff;">John Smith</div>
+                                                                    <div class="gdlr-core-testimonial-position gdlr-core-info-font gdlr-core-skin-caption" style="color: #acb2ff;">CEO, Press Mag</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-testimonial clearfix">
+                                                        <div class="gdlr-core-testimonial-content-wrap">
+                                                            <div class="gdlr-core-testimonial-content gdlr-core-info-font gdlr-core-skin-content" style="font-size: 21px;color: #c4c8ff;">
+                                                                <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly.</p>
+                                                            </div>
+                                                            <div class="gdlr-core-testimonial-author-wrap clearfix">
+                                                                <div class="gdlr-core-testimonial-quote gdlr-core-quote-font gdlr-core-skin-icon" style="color: #ffffff;">&#8220;</div>
+                                                                <div class="gdlr-core-testimonial-author-content">
+                                                                    <div class="gdlr-core-testimonial-title gdlr-core-title-font gdlr-core-skin-title" style="color: #ffffff;">Jane Doe</div>
+                                                                    <div class="gdlr-core-testimonial-position gdlr-core-info-font gdlr-core-skin-caption" style="color: #acb2ff;">Jounalist</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="padding: 90px 0px 60px 0px;">
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " data-sync-height="height-contact">
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 25px;">
+                                                    <div class="gdlr-core-title-item-title-wrap ">
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 38px;font-weight: 600;letter-spacing: 0px;text-transform: none;color: #2d2d2d;">
+                                                            Request a call back?<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-divider-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-divider-item-normal">
+                                                    <div class="gdlr-core-divider-container gdlr-core-left-align" style="max-width: 55px;">
+                                                        <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #560632;border-bottom-width: 3px;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
+                                                    <div class="gdlr-core-text-box-item-content" style="font-size: 19px;">
+                                                        <p>
+                                                            Please fill out the form and press the submit button.<br />We will get back to you with 1-2 business days.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-column gdlr-core-column-30">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " data-sync-height="height-contact">
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js  gdlr-core-sync-height-content">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-contact-form-7-item gdlr-core-item-pdlr gdlr-core-item-pdb " style="padding-bottom: 20px;">
+                                                    <div role="form" class="wpcf7" id="wpcf7-f5503-p5514-o1" lang="en-US" dir="ltr">
+                                                        <div class="screen-reader-response"></div>
+                                                        <form action="/financity/demo2/#wpcf7-f5503-p5514-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+                                                            <div style="display: none;">
+                                                                <input type="hidden" name="_wpcf7" value="5503" />
+                                                                <input type="hidden" name="_wpcf7_version" value="5.0.3" />
+                                                                <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                                                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5503-p5514-o1" />
+                                                                <input type="hidden" name="_wpcf7_container_post" value="5514" />
+                                                            </div>
+                                                            <div class="gdlr-core-input-wrap gdlr-core-large gdlr-core-full-width gdlr-core-with-column gdlr-core-no-border ">
+                                                                <div class="gdlr-core-column-30">
+                                                                    <span class="wpcf7-form-control-wrap your-name">
+                                                                        <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Full Name*" />
+                                                                    </span>
+                                                                </div>
+                                                                <div class="gdlr-core-column-30">
+                                                                    <span class="wpcf7-form-control-wrap your-email">
+                                                                        <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email*" />
+                                                                    </span>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="gdlr-core-column-30">
+                                                                    <span class="wpcf7-form-control-wrap your-subject">
+                                                                        <input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Subject*" />
+                                                                    </span>
+                                                                </div>
+                                                                <div class="gdlr-core-column-30">
+                                                                    <span class="wpcf7-form-control-wrap your-phone">
+                                                                        <input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Phone Number" />
+                                                                    </span>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                                <div class="gdlr-core-column-60">
+                                                                    <span class="wpcf7-form-control-wrap your-message">
+                                                                        <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message*"></textarea>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="gdlr-core-column-60">
+                                                                    <input type="submit" value="Submit Now" class="wpcf7-form-control wpcf7-submit gdlr-core-round-button" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-wrapper " style="margin: 0px 0px 0px 0px;padding: 70px 0px 30px 0px;">
+                        <div class="gdlr-core-pbf-background-wrap" style="background-color: #f2f2f2 ;"></div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container-custom" style="max-width: 1360px;">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-gallery-item gdlr-core-item-pdb clearfix  gdlr-core-gallery-item-style-grid gdlr-core-item-pdlr ">
+                                        <div class="gdlr-core-flexslider flexslider gdlr-core-js-2 " data-type="carousel" data-column="5" data-nav="none" data-nav-parent="gdlr-core-blog-item">
+                                            <ul class="slides">
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                                                        <img src="~/Landing/wp-content/uploads/2016/11/banner-3.png" alt="" width="148" height="44" />
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                                                        <img src="~/Landing/wp-content/uploads/2016/11/banner-4.png" alt="" width="132" height="46" />
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                                                        <img src="~/Landing/wp-content/uploads/2016/11/banner-2.png" alt="" width="141" height="45" />
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                                                        <img src="~/Landing/wp-content/uploads/2016/11/banner-1.png" alt="" width="138" height="49" />
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                                                        <img src="~/Landing/wp-content/uploads/2017/06/banner-5.png" alt="" width="151" height="43" />
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="financity-copyright-wrapper">
+                    <div class="financity-copyright-container financity-container clearfix">
+                        <div class="financity-copyright-left financity-item-pdlr">Copyright © 2018 ARM Pensions. All rights reserved.</div>
+                        <div class="financity-copyright-right financity-item-pdlr">
+                            <a href="#" target="_self">
+                                <i class="fa fa-facebook" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i>
+                            </a>
+                            <a href="#" target="_self">
+                                <i class="fa fa-twitter" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i>
+                            </a>
+                            <a href="#" target="_self">
+                                <i class="fa fa-linkedin" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i>
+                            </a>
+                            <a href="#" target="_self">
+                                <i class="fa fa-google-plus" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i>
+                            </a>
+                            <a href="#" target="_self">
+                                <i class="fa fa-instagram" style="font-size: 16px;color: #ffffff;margin-left: 17px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='~/Landing/assets/js/scripts.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/contact-form-7/includes/js/scripts.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-includes/js/jquery/ui/effect.min.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/themes/financity/js/script-core.js'></script>
+    <script type='text/javascript' src='https://maps.google.com/maps/api/js?key=AIzaSyD733KCcfQFGTp5SjZ5P9nvUKl6Ir4fYPo&#038;libraries=geometry%2Cplaces%2Cweather%2Cpanoramio%2Cdrawing&#038;language=en&#038;ver=4.9.8'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/wp-google-map-plugin/assets/js/maps.js'></script>
+    <script type='text/javascript' src='https://demo.goodlayers.com/financity/demo2/wp-content/plugins/goodlayers-core/plugins/combine/script.js'></script>
+
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-content/plugins/goodlayers-core/include/js/page-builder.js'></script>
+    <script type='text/javascript' src='https://cdn.goodlayers.com/financity/demo2/wp-includes/js/wp-embed.min.js'></script>
+</body>
+</html>

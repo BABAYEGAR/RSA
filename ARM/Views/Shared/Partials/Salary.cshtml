@@ -1,0 +1,14 @@
+﻿@model ARM.Models.Application.Profiling
+<!--Salary -->
+<fieldset>
+    <legend>Salary</legend>
+    @Html.LabelFor(model => model.AnnualSalary, new { @class = "control-label" })<span class="required">*</span>
+    <input type="range" class="form-control" id="salaryRange" name="AnnualSalary" value="@Model?.AnnualSalary" step="25" min="1000" max="100000000" required>
+    @Html.ValidationMessageFor(model => model.AnnualSalary, "", new { @class = "text-danger" })
+    <div class="range">
+        <small class="min pull-left">Min</small>
+        <small class="max pull-right">Max</small>
+    </div>
+
+
+</fieldset>

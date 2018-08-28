@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = "_Layout";
+    Layout = "_LayoutCalculate";
     ViewBag.Title = "Request Success";
 }
 
@@ -13,22 +13,11 @@
         padding-top: 0px !important
     }
 </style>
-<div class="about_slider-area pt-90">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="slider-text-2 text-center pt-40">
-                    <h2 class="color-w font-w-8 font-40 pb-20">Thank You!</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <section class="contact-us-section pb-30">
 <div class="container">
     <div class="form-box clearfix">
-        <h3>Thank you for using the ARM Pension Retirement Calculator!<br/> Click the button below to try again!</h3>
-        <a href="@Url.Action("BasicInfo")" class="btn btn-purple waves-effect waves-light">Try Again!</a>
+        <h3>Thank you for using the ARM Pensions Retirement Calculator!Click the button below to try again!</h3>
+        <a style="color: white" href="@Url.Action("Calculate")" class="btn btn-primary btn-lg">Try Again!</a>
     </div>
 </div>
 </section>

@@ -1,0 +1,44 @@
+﻿@using ARM.Models.Enum
+@using Opmas.Models.Enum
+@model ARM.Models.Application.Profiling
+<!-- About you -->
+<fieldset>
+    <legend>About You</legend>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+
+                @Html.LabelFor(model => model.DateOfBirth, new {@class = "control-label"})<span class="required">*</span>
+                <input class="form-control datepicker" name="DateOfBirth" value="@Model?.DateOfBirth.ToString("MM/dd/yyyy")" placeholder="Please select your date of birth" data-date-format="mm/dd/yyyy" required data-parsley-group="block0">
+                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new {@class = "text-danger"})
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Gender, new {@class = "control-label"})<span class="required">*</span>
+                @Html.DropDownListFor(model => model.Gender, Html.GetEnumSelectList(typeof(Gender)).OrderByDescending(n => n.Value), "Select your Gender", new {@class = "form-control", required = "required"})
+                @Html.ValidationMessageFor(model => model.Gender, "", new {@class = "text-danger"})
+            </div>
+        </div>
+     
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MartitalStatus, new {@class = "control-label"})<span class="required">*</span>
+                    @Html.DropDownListFor(model => model.MartitalStatus, Html.GetEnumSelectList(typeof(MaritalStatus)).OrderByDescending(n => n.Value), "Select your Marital Status", new {@class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.MartitalStatus, "", new {@class = "text-danger"})
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(model => model.RetirementAge, new {@class = "control-label"})<span class="required">*</span>
+                <input class="form-control" name="RetirementAge" value="@Model?.RetirementAge" placeholder="Please enter your expected retirement age" required data-parsley-group="block0">
+                @Html.ValidationMessageFor(model => model.RetirementAge, "", new {@class = "text-danger"})
+            </div>
+        </div>
+    </div>
+</fieldset>

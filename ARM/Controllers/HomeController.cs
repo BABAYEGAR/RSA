@@ -38,180 +38,32 @@ namespace ARM.Controllers
             HttpContext.Session.Clear();
             return View();
         }
-
-        public IActionResult BasicInfo()
+        public IActionResult Success()
+        {
+            return View();
+        }
+        public IActionResult Calculate()
         {
             if (HttpContext.Session.GetString("Profiling") != null)
             {
                 var data = JsonConvert.DeserializeObject<Profiling>(HttpContext.Session.GetString("Profiling"));
                 return View(data);
             }
+            HttpContext.Session.Remove("customerData");
+            HttpContext.Session.Remove("Profiling");
+            HttpContext.Session.Remove("result");
+            HttpContext.Session.Clear();
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult BasicInfo(Profiling profiling)
+        public IActionResult Calculate(Profiling profiling)
         {
-            try
-            {
+
                 HttpContext.Session.SetString("Profiling", JsonConvert.SerializeObject(profiling));
-                if (HttpContext.Session.GetString("result") != null)
-                {
-                    var result = new Result();
-                    if (HttpContext.Session.GetString("Profiling") != null)
-                    {
-                        var data = JsonConvert.DeserializeObject<Profiling>(HttpContext.Session.GetString("Profiling"));
-                        result.IdealRetirementBalance = data.IdealRetirementBalance;
-                        result.ExpectedRetirementBalance = new Calculator().ExpectedRsaBalanceForRetirement(
-                            DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.IncomeAsideRsa,
-                            data.MonthlyEmployeeContribution + data.MonthlyEmployerContribution + data.CurrentMonthlyAVC);
-                        result.AdjustedAnualAvc = new Calculator().AdjustedAnnualAvc(
-                            DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.CurrentRetirementSavingBalance,
-                            data.MonthlyEmployeeContribution + data.MonthlyEmployerContribution + data.CurrentMonthlyAVC, data.IncomeAsideRsa, data.IdealRetirementBalance);
-                        result.AdjustedAnualAvcCloseShortfall = result.AdjustedAnualAvc + data.CurrentMonthlyAVC;
-                        result.ProjectedAnnualSalary = new Calculator().AnuualSalaryProjections(
-                            DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.MonthlyEmployeeContribution,
-                            data.MonthlyEmployerContribution);
-                        result.Will = data.Will;
-                        result.RiskAppetite = new Calculator().FundSelector(data.TvShow, data.BestFriend, data.Invest);
-                        result.Age = data.RetirementAge;
-                        result.RSA = data.RsaAccount;
-                    }
-                    return View("Result", result);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-         
-            return View("PensionPot",profiling);
+                    return View("SignUp");
         }
 
-  
-        public IActionResult PensionPot()
-        {
-            if (HttpContext.Session.GetString("Profiling") != null)
-            {
-                var data = JsonConvert.DeserializeObject<Profiling>(HttpContext.Session.GetString("Profiling"));
-                return View(data);
-            }
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult PensionPot(Profiling profiling)
-        {
-            HttpContext.Session.SetString("Profiling", JsonConvert.SerializeObject(profiling));
-            if (HttpContext.Session.GetString("result") != null)
-            {
-                var result = new Result();
-                if (HttpContext.Session.GetString("Profiling") != null)
-                {
-                    var data = JsonConvert.DeserializeObject<Profiling>(HttpContext.Session.GetString("Profiling"));
-                    result.IdealRetirementBalance = data.IdealRetirementBalance;
-                    result.ExpectedRetirementBalance = new Calculator().ExpectedRsaBalanceForRetirement(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.IncomeAsideRsa,
-                        data.MonthlyEmployeeContribution + data.MonthlyEmployerContribution + data.CurrentMonthlyAVC);
-                    result.AdjustedAnualAvc = new Calculator().AdjustedAnnualAvc(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.CurrentRetirementSavingBalance,
-                        data.MonthlyEmployeeContribution + data.MonthlyEmployerContribution + data.CurrentMonthlyAVC, data.IncomeAsideRsa, data.IdealRetirementBalance);
-                    result.AdjustedAnualAvcCloseShortfall = result.AdjustedAnualAvc + data.CurrentMonthlyAVC;
-                    result.ProjectedAnnualSalary = new Calculator().AnuualSalaryProjections(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.MonthlyEmployeeContribution,
-                        data.MonthlyEmployerContribution);
-                    result.Will = data.Will;
-                    result.RiskAppetite = new Calculator().FundSelector(data.TvShow, data.BestFriend, data.Invest);
-                    result.Age = data.RetirementAge;
-                    result.RSA = data.RsaAccount;
-                }
-                return View("Result", result);
-            }
-            return View("IdealRetirement",profiling);
-        }
-
-        public IActionResult IdealRetirement()
-        {
-            if (HttpContext.Session.GetString("Profiling") != null)
-            {
-                var data = JsonConvert.DeserializeObject<Profiling>(HttpContext.Session.GetString("Profiling"));
-                return View(data);
-            }
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult IdealRetirement(Profiling profiling)
-        {
-            HttpContext.Session.SetString("Profiling", JsonConvert.SerializeObject(profiling));
-            if (HttpContext.Session.GetString("result") != null)
-            {
-                var result = new Result();
-                if (HttpContext.Session.GetString("Profiling") != null)
-                {
-                    var data = JsonConvert.DeserializeObject<Profiling>(HttpContext.Session.GetString("Profiling"));
-                    result.IdealRetirementBalance = data.IdealRetirementBalance;
-                    result.ExpectedRetirementBalance = new Calculator().ExpectedRsaBalanceForRetirement(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.IncomeAsideRsa,
-                        data.MonthlyEmployeeContribution + data.MonthlyEmployerContribution + data.CurrentMonthlyAVC);
-                    result.AdjustedAnualAvc = new Calculator().AdjustedAnnualAvc(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.CurrentRetirementSavingBalance,
-                        data.MonthlyEmployeeContribution + data.MonthlyEmployerContribution + data.CurrentMonthlyAVC, data.IncomeAsideRsa, data.IdealRetirementBalance);
-                    result.AdjustedAnualAvcCloseShortfall = result.AdjustedAnualAvc + data.CurrentMonthlyAVC;
-                    result.ProjectedAnnualSalary = new Calculator().AnuualSalaryProjections(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.MonthlyEmployeeContribution,
-                        data.MonthlyEmployerContribution);
-                    result.Will = data.Will;
-                    result.RiskAppetite = new Calculator().FundSelector(data.TvShow, data.BestFriend, data.Invest);
-                    result.Age = data.RetirementAge;
-                    result.RSA = data.RsaAccount;
-                }
-                return View("Result", result);
-            }
-            return View("RiskAppetite", profiling);
-        }
-        public IActionResult RiskAppetite()
-        {
-            if (HttpContext.Session.GetString("Profiling") != null)
-            {
-                var datas = JsonConvert.DeserializeObject<Profiling>(HttpContext.Session.GetString("Profiling"));
-                return View(datas);
-            }
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult RiskAppetite(Profiling profiling)
-        {
-            HttpContext.Session.SetString("Profiling", JsonConvert.SerializeObject(profiling));
-            if (HttpContext.Session.GetString("result") != null)
-            {
-                var result = new Result();
-                if (HttpContext.Session.GetString("Profiling") != null)
-                {
-                    var data = JsonConvert.DeserializeObject<Profiling>(HttpContext.Session.GetString("Profiling"));
-                    result.IdealRetirementBalance = data.IdealRetirementBalance;
-                    result.ExpectedRetirementBalance = new Calculator().ExpectedRsaBalanceForRetirement(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.IncomeAsideRsa,
-                        data.MonthlyEmployeeContribution + data.MonthlyEmployerContribution + data.CurrentMonthlyAVC);
-                    result.AdjustedAnualAvc = new Calculator().AdjustedAnnualAvc(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.CurrentRetirementSavingBalance,
-                        data.MonthlyEmployeeContribution + data.MonthlyEmployerContribution + data.CurrentMonthlyAVC, data.IncomeAsideRsa, data.IdealRetirementBalance);
-                    result.AdjustedAnualAvcCloseShortfall = result.AdjustedAnualAvc + data.CurrentMonthlyAVC;
-                    result.ProjectedAnnualSalary = new Calculator().AnuualSalaryProjections(
-                        DateTime.Now.Year - data.DateOfBirth.Year, data.RetirementAge, data.MonthlyEmployeeContribution,
-                        data.MonthlyEmployerContribution);
-                    result.Will = data.Will;
-                    result.RiskAppetite = new Calculator().FundSelector(data.TvShow, data.BestFriend, data.Invest);
-                    result.Age = data.RetirementAge;
-                    result.RSA = data.RsaAccount;
-                }
-                return View("Result", result);
-            }
-            return View("SignUp");
-        }
         public IActionResult SignUp()
         {
             if (HttpContext.Session.GetString("customerData") != null)
@@ -246,10 +98,12 @@ namespace ARM.Controllers
                 result.RiskAppetite = new Calculator().FundSelector(data.TvShow, data.BestFriend, data.Invest);
                 result.Age = data.RetirementAge;
                 result.RSA = data.RsaAccount;
+                result.OtherIncome = data.IncomeAsideRsa;
             }
             HttpContext.Session.SetString("result", JsonConvert.SerializeObject(result));
             return View("Result", result);
         }
+
         public IActionResult Result()
         {
             var result = new Result();
@@ -271,6 +125,7 @@ namespace ARM.Controllers
                 result.RiskAppetite = new Calculator().FundSelector(data.TvShow, data.BestFriend, data.Invest);
                 result.Age = data.RetirementAge;
                 result.RSA = data.RsaAccount;
+                result.OtherIncome = data.IncomeAsideRsa;
                 HttpContext.Session.SetString("result", JsonConvert.SerializeObject(result));
                 return View(result);
             }

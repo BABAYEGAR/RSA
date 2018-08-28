@@ -1,0 +1,45 @@
+﻿@using ARM.Models.Enum
+@model ARM.Models.Application.Profiling
+<!-- Ideal Retirement -->
+<fieldset>
+    <legend>Ideal Retirement</legend>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(model => model.IdealRetirementBalance, new { @class = "control-label" })<span class="required">*</span>
+                <input type="number" name="IdealRetirementBalance" class="form-control" placeholder="Please enter your ideal retirement balance" value="@Model?.IdealRetirementBalance" data-parsley-group="block3" required />
+                @Html.ValidationMessageFor(model => model.IdealRetirementBalance, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            @Html.LabelFor(model => model.RetirementHome, new { @class = "control-label" })<span class="required">*</span>
+            @Html.DropDownListFor(model => model.RetirementHome, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RetirementHome, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-4">
+            @Html.LabelFor(model => model.RetirementDependants, new { @class = "control-label" })<span class="required">*</span>
+            @Html.DropDownListFor(model => model.RetirementDependants, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RetirementDependants, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            @Html.LabelFor(model => model.Will, new { @class = "control-label" })<span class="required">*</span>
+            @Html.DropDownListFor(model => model.Will, Html.GetEnumSelectList(typeof(YesNo)).OrderByDescending(n => n.Value), "Select an Answer", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Will, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            @Html.LabelFor(model => model.IncomeAsideRsa, new { @class = "control-label" })<span class="required">*</span>
+            <input type="range" id="incomeRetirement" name="IncomeAsideRsa" class="form-control" value="@Model?.IncomeAsideRsa" step="25" min="1000" max="50000000" required>
+
+            <div class="range">
+                <small class="min pull-left">Min</small>
+                <small class="max pull-right">Max</small>
+            </div>
+            @Html.ValidationMessageFor(model => model.IncomeAsideRsa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</fieldset>
