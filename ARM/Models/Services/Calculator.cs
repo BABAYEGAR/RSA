@@ -171,18 +171,41 @@ namespace ARM.Models.Services
             decimal balancePercentage =  8;
             decimal balacePercentageCharge = balancePercentage / 100;
             decimal balancePercentageTotalCharge = balacePercentageCharge + 1;
-            balance = Math.Round(rsaInitialBalance * (decimal) Math.Pow((double) balancePercentageTotalCharge,retirementAge-currentAge),2);
+            balance = rsaInitialBalance *
+                      (decimal) Math.Pow((double) balancePercentageTotalCharge, retirementAge - currentAge);
+            balance = Math.Round(balance,2);
             return balance;
         }
 
         public decimal? ExpectedRsaBalanceForRetirement(long currentAge, long retirementAge, decimal rsaInitialBalance,
             decimal monthlyContribution)
         {
-            decimal? transferredBalance = TransferredBalanaceForRetirement(currentAge, retirementAge, rsaInitialBalance);
+            decimal transferredBalance = TransferredBalanaceForRetirement(currentAge, retirementAge, rsaInitialBalance);
             decimal? lastContribution =
                 MonthLyContributions(currentAge, retirementAge, monthlyContribution).LastOrDefault()?.RsaBalance;
             var balance = transferredBalance + lastContribution;
             return balance;
+        }
+        public decimal? AdjustedAnnualAvc(long currentAge, long retirementAge, decimal rsaInitialBalance,
+            decimal monthlyContribution,decimal otherIncome,decimal idealBalance)
+        {
+            decimal? shortfallbalance = 0;
+            decimal? balance = 0;
+            decimal? lastContribution =
+                ExpectedRsaBalanceForRetirement(currentAge, retirementAge, rsaInitialBalance, monthlyContribution);
+            otherIncome = otherIncome * 20;
+            shortfallbalance = lastContribution + otherIncome - idealBalance;
+
+            var numerator = -1 * shortfallbalance * (decimal?) 0.0066667;
+            var denomerator = Math.Pow(1 + 0.0066667,(retirementAge - currentAge) * 12);
+            denomerator = denomerator - 1;
+            balance = numerator / (decimal?) denomerator;
+            if (balance != null)
+            {
+                balance = Math.Round((decimal) balance);
+                return balance;
+            }
+            return null;
         }
 
         public decimal MonthlyTotalEmolumentAssumption(decimal employeeContribution, decimal employerContribution)
@@ -198,7 +221,9 @@ namespace ARM.Models.Services
             decimal balacePercentageCharge = balancePercentage / 100;
             decimal balacePercentageTotalCharge = balacePercentageCharge + 1;
             decimal emolumentAssumption = MonthlyTotalEmolumentAssumption(employeeContribution, employerContribution);
-            balance = Math.Round(emolumentAssumption * 12 * (decimal) Math.Pow((double) balacePercentageTotalCharge, retirementAge - currentAge),2);
+            balance = emolumentAssumption * 12 *
+                      (decimal) Math.Pow((double) balacePercentageTotalCharge, retirementAge - currentAge);
+            balance = Math.Round(balance,2);
             return balance;
         }
     }

@@ -1,0 +1,87 @@
+﻿@using ARM.Models.Enum
+@using Microsoft.AspNetCore.Http
+@using Opmas.Models.Enum
+@model ARM.Models.Application.Profiling
+@{
+    ViewBag.Title = "Ideal Retirement";
+    Layout = "_Layout";
+}
+<style>
+    .about_slider-area {
+        height: 180px !important;
+    }
+
+    .contact-us-section {
+        padding-top: 0px !important
+    }
+</style>
+<div class="about_slider-area pt-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="slider-text-2 text-center pt-40">
+                    <h2 class="color-w font-w-8 font-40 pb-20">Ideal Retirement!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="contact-us-section pb-30">
+    <div class="container">
+        <div class="form-box clearfix">
+            @using (Html.BeginForm("IdealRetirement", "Home", FormMethod.Post, new { @class = "shake scroll-reveal", enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(n=>n.DateOfBirth)
+                @Html.HiddenFor(n=>n.Gender)
+                @Html.HiddenFor(n=>n.MartitalStatus)
+                @Html.HiddenFor(n=>n.AnnualSalary)
+                @Html.HiddenFor(n=>n.RetirementAge)
+                @Html.HiddenFor(n=>n.RsaAccount)
+                @Html.HiddenFor(n=>n.ArmPensionRegistered)
+                @Html.HiddenFor(n=>n.CurrentRetirementSavingBalance)
+                @Html.HiddenFor(n=>n.MonthlyEmployerContribution)
+                @Html.HiddenFor(n=>n.MonthlyEmployeeContribution)
+                @Html.HiddenFor(n=>n.VoluntaryContributions)
+                @Html.HiddenFor(n=>n.PaymentPerVoluntaryContributions)
+                @Html.HiddenFor(n=>n.FrequencyOfVoluntaryContributions)
+                if (Context.Session.GetString("result") != null)
+                {
+                    @Html.HiddenFor(n=>n.Invest)
+                    @Html.HiddenFor(n=>n.BestFriend)
+                    @Html.HiddenFor(n=>n.TvShow)
+                }
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.IdealRetirementBalance, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.EditorFor(model => model.IdealRetirementBalance, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your ideal retirement balance" } })
+                    @Html.ValidationMessageFor(model => model.IdealRetirementBalance, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.RetirementHome, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.DropDownListFor(model => model.RetirementHome, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.RetirementHome, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.RetirementDependants, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.DropDownListFor(model => model.RetirementDependants, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.RetirementDependants, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Will, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.DropDownListFor(model => model.Will, Html.GetEnumSelectList(typeof(YesNo)).OrderByDescending(n => n.Value), "Select an Answer", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Will, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.IncomeAsideRsa, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.EditorFor(model => model.IncomeAsideRsa, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter any other annual income aside RSA" } })
+                    @Html.ValidationMessageFor(model => model.IncomeAsideRsa, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-12">
+                    <button type="submit" class="btn btn-purple waves-effect waves-light pull-right">Next</button>
+                    <a href="@Url.Action("PensionPot")" class="btn btn-purple waves-effect waves-light pull-right">Back</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

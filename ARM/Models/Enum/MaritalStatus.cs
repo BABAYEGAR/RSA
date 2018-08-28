@@ -5,6 +5,6 @@
         Single,
         Married,
         Divorced,
-        Engaged
+        Seperated
     }
 }

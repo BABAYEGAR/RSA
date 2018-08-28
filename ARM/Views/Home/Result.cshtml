@@ -1,0 +1,253 @@
+﻿@model ARM.Models.Application.Result
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Result & Recommendation";
+    var otherRetirementBalance = 20 * Model?.OtherIncome;
+    var avc = Model?.ExpectedRetirementBalance + otherRetirementBalance - Model?.IdealRetirementBalance;
+    string appetite = null;
+    string ageLimt = null;
+    string ageLimtSuggestion = null;
+    string appetiteRate = null;
+    if (Model?.RiskAppetite == "FundOne")
+    {
+        appetite = "Fund I";
+        ageLimt = "49yrs & below";
+    }
+    if (Model?.RiskAppetite == "FundTwo")
+    {
+        appetite = "Fund II";
+        ageLimt = "49yrs & below";
+    }
+    if (Model?.RiskAppetite == "FundThree")
+    {
+        appetite = "Fund III";
+        ageLimt = "50yrs & above";
+    }
+    if (Model?.RiskAppetite == "FundFour")
+    {
+        appetite = "Fund IV";
+        ageLimt = "50yrs & above";
+    }
+    if (Model?.Age < 49 && Model.RSA == "0" || Model?.RSA == "Yes")
+    {
+        ageLimtSuggestion = "Fund I";
+        appetiteRate = "10% - 55%";
+    }
+    else if (Model?.Age < 49 && Model.RSA == "1" || Model?.RSA == "No")
+    {
+        ageLimtSuggestion = "Fund II";
+        appetiteRate = "20% - 75%";
+    }
+    else if (Model?.Age > 50 && Model.RSA == "0" || Model?.RSA == "Yes")
+    {
+        ageLimtSuggestion = "Fund II";
+        appetiteRate = "5% - 20%";
+    }
+    else
+    {
+        ageLimtSuggestion = "No Movement";
+        appetiteRate = "0% - 10%";
+    }
+}
+
+<style>
+    .about_slider-area { height: 280px !important; }
+
+    .contact-us-section { padding-top: 0px !important }
+</style>
+<div class="about_slider-area pt-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="slider-text-2 text-center pt-40">
+                    <h3 style="color: white; font-weight: bolder">Click Page to Update Information</h3>
+                    <h4 class="color-w font-22">
+                        <a class="font-20 color-w" href="@Url.Action("BasicInfo")">About you</a> >> <a class="font-20 color-w" href="@Url.Action("PensionPot")">Pension Pot</a> >> <a class="font-20 color-w" href="@Url.Action("IdealRetirement")">Ideal Retirement</a> >> <a class="font-20 color-w" href="@Url.Action("RiskAppetite")">Risk Appetite</a> >>
+                        <span class="plr-10">
+                            <i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>
+                        </span>Result!
+                    </h4>
+                    <h2 class="color-w font-w-8 font-40 pb-20">Results & Recommendations!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="faq-section">
+    <div class="container">
+        <!--Sec Title-->
+        <div class="row clearfix">
+            <div class="column col-md-9 col-md-offset-1 col-sm-12 col-xs-12 pt-20" id="st-accordion">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Retirement Age</th>
+                        <th>Expected Retirement Balance</th>
+                        <th>Ideal Retirement Balance</th>
+                        <th>Shortfall/Surplus</th>
+                        <th>Projected Annual Salary</th>
+                        <th>Monthly Programmed Withdrawal Payment</th>
+                    </tr>
+                    <tr>
+                        <td>@Model?.Age</td>
+                        <td>&#8358 @string.Format("{0:n0}", Model?.ExpectedRetirementBalance)</td>
+                        <td>&#8358 @string.Format("{0:n0}", Model?.IdealRetirementBalance)</td>
+                        <td>&#8358 @string.Format("{0:n0}", avc)</td>
+                        <td>&#8358 @string.Format("{0:n0}", Model?.ProjectedAnnualSalary)</td>
+                        <td>&#8358 @string.Format("{0:n0}", Model?.MonthlyProgrammedWithdrawalPayment)</td>
+                    </tr>
+                </table>
+
+                <!--Accordion Box-->
+                <ul class="accordion-box">
+                    <!--Block-->
+                    <li class="accordion block mb-20">
+                        <div class="acc-btn">
+
+                            Explanations
+                        </div>
+                        <div class="acc-content">
+                            <div class="content">
+
+                                <ul style="list-style-type: circle">
+
+                                    <li>* At your preferred retirement age of @Model?.Age, your expected retirement balance will be &#8358 @string.Format("{0:n0}", Model?.ExpectedRetirementBalance). You have a shortfall retirement balance of &#8358 @string.Format("{0:n0}", avc) before you can have your ideal retirement balance.</li>
+                                    <br/>
+                                    <li>*To achieve your ideal retirement balance of &#8358 @string.Format("{0:n0}", Model?.IdealRetirementBalance) , we recommend an adjusted annual AVC of &#8358 @string.Format("{0:n0}", Model?.AdjustedAnualAvc) . We have assumed a new AVC amount of &#8358 @string.Format("{0:n0}", Model?.AdjustedAnualAvcCloseShortfall) to close the shortfall between your expected retirement balance and ideal retirement balance.</li>
+                                    <br/>
+                                    <li>*With an annual salary increase rate at 4%, your annual, your projected annual salary at retirement is &#8358 @string.Format("{0:n0}", Model?.ProjectedAnnualSalary).</li>
+                                    <br/>
+                                    <li>*Based on Pencom’s statutory regulation for computing programmed withdrawals at 8% per annum, your allowable monthly programmed withdrawal payment at retirement is &#8358 @string.Format("{0:n0}", Model?.MonthlyProgrammedWithdrawalPayment).</li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <!--Block-->
+                    <li class="accordion block mb-20">
+                        <div class="acc-btn">
+
+                            Fund type recommendation (based on age and risk appetite)
+                        </div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <p>
+                                    Based on your age and risk appetite, we recommend the @appetite.
+                                    The @appetite is a balanced risk profile which is the default fund for RSA Holders @ageLimt.
+                                    You are exposed to @appetiteRate variable investment instruments within your portfolio.
+
+                                    There is a possibility you can move to @ageLimtSuggestion based on your risk appetite.
+
+
+
+                                    To learn more about the multi-fund structure visit <a style="font-weight: bolder" href="https://www.armpension.com/multi-fund-structure/" target="_blank">here</a> for more information.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <!--Block-->
+                    <li class="accordion block mb-20">
+                        <div class="acc-btn">
+
+                            Will recommendation
+                        </div>
+                        <div class="acc-content">
+                            <div class="content">
+                                @if (Model?.Will == "Yes" || Model?.Will == "0")
+                                {
+                                    <p>Congratulations on already having a valid Will. Don't forget to update it when there is a significant change in your life such as marriage.</p>
+                                }
+                                else
+                                {
+                                    <p>A Will ensures that your dependants and/or intended beneficiaries receive whatever assets you want them to have when you are no longer around. It is advisable you make a legally binding Will or Testament as soon as possible </p>
+                                }
+
+                            </div>
+                        </div>
+                    </li>
+                    <!--Block-->
+                    <li class="accordion block mb-20">
+                        <div class="acc-btn">
+
+                            General retirement advise
+                        </div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <p>It is advisable to adopt a broad view while planning for retirement and this can include getting insurance covers like health/disability, property, life, etc., building up additional funds through other form of investments, and planning your estate.</p>
+                            </div>
+                        </div>
+                    </li>
+                    @if (Model?.RSA == "No" || Model?.RSA == "1")
+                    {
+                        <!--Block-->
+                        <li class="accordion block mb-20">
+                            <div class="acc-btn">
+
+                                Expression of Interest (EoI)
+                            </div>
+                            <div class="acc-content">
+                                <div class="content">
+                                    <p>Do you want ARM Pensions to manage your RSA in the future?</p>
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+                    <!--Block-->
+                    <li class="accordion block mb-20">
+                        <div class="acc-btn">
+                            Rate your experience (1-5)
+                        </div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <p>
+                                    @using (Html.BeginForm("SubmitRating", "Home", FormMethod.Post, new {@class = "", enctype = "multipart/form-data"}))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+
+                                        <div id="myRating">
+
+                                        </div>
+                                        <br/>
+                                        <button type="submit" class="btn btn-purple waves-effect waves-light">Rate!</button>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+@section Script
+{
+    <script src="~/Landing/js/emotion-ratings.min.js"></script>
+    <script>
+        $('#st-accordion > ul > li').addClass('st-open');
+        $('#st-accordion > ul > li div.acc-content').show();
+        $('span').hide();
+
+        var emotionsArray = {
+            angry: "&#x1F620;",
+            disappointed: "&#x1F61E;",
+            meh: "&#x1F610;",
+            happy: "&#x1F60A;",
+            smile: "&#x1F603;",
+            wink: "&#x1F609;",
+            laughing: "&#x1F606;",
+            inLove: "&#x1F60D;",
+            heart: "&#x2764;",
+            crying: "&#x1F622;",
+            star: "&#x2B50;",
+        };
+        var emotionsArray = ['angry', 'disappointed', 'meh', 'happy', 'inLove'];
+        $("#myRating").emotionsRating({
+            emotions: emotionsArray
+        });
+    </script>
+}

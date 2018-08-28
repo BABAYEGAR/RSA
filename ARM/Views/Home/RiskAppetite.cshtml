@@ -1,0 +1,110 @@
+﻿@using ARM.Models.Enum
+@using Microsoft.AspNetCore.Http
+@using Opmas.Models.Enum
+@model ARM.Models.Application.Profiling
+@{
+    ViewBag.Title = "Risk Appetite";
+    Layout = "_Layout";
+
+    List<string> tvshowList = new List<string>();
+    tvshowList.Add("Risk the N1,000,000 on spinning a wheel with a 50-50 chance of winning N2,500,000");
+}
+@section Css
+    {
+    <link href="~/datepicker/css/datepicker.css" rel="stylesheet" />
+}
+
+<style>
+    .about_slider-area {
+        height: 180px !important;
+    }
+
+    .contact-us-section {
+        padding-top: 0px !important
+    }
+</style>
+<div class="about_slider-area pt-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="slider-text-2 text-center pt-40">
+                    <h2 class="color-w font-w-8 font-40 pb-20">Your Risk Appetite!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="contact-us-section pb-30">
+    <div class="container">
+        <div class="form-box clearfix">
+            @using (Html.BeginForm("RiskAppetite", "Home", FormMethod.Post, new { @class = "shake scroll-reveal", enctype = "multipart/form-data" }))
+            {
+                @Html.HiddenFor(n=>n.DateOfBirth)
+                @Html.HiddenFor(n=>n.Gender)
+                @Html.HiddenFor(n=>n.MartitalStatus)
+                @Html.HiddenFor(n=>n.AnnualSalary)
+                @Html.HiddenFor(n=>n.RetirementAge)
+                @Html.HiddenFor(n=>n.RsaAccount)
+                @Html.HiddenFor(n=>n.ArmPensionRegistered)
+                @Html.HiddenFor(n=>n.CurrentRetirementSavingBalance)
+                @Html.HiddenFor(n=>n.MonthlyEmployerContribution)
+                @Html.HiddenFor(n=>n.MonthlyEmployeeContribution)
+                @Html.HiddenFor(n=>n.VoluntaryContributions)
+                @Html.HiddenFor(n=>n.PaymentPerVoluntaryContributions)
+                @Html.HiddenFor(n=>n.FrequencyOfVoluntaryContributions)
+                @Html.HiddenFor(n=>n.IdealRetirementBalance)
+                @Html.HiddenFor(n=>n.RetirementHome)
+                @Html.HiddenFor(n=>n.RetirementDependants)
+                @Html.HiddenFor(n=>n.Will)
+                @Html.HiddenFor(n=>n.IncomeAsideRsa)
+
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group col-md-12">
+                    @Html.LabelFor(model => model.TvShow, new { @class = "control-label" })<span class="required">*</span>
+                    <select data-val="true" data-val-required="The field is required!" value="@Model.TvShow" id="TvShow" name="TvShow" class="form-control" required>
+                        <option value="">Select an Answer</option>
+                        <option value="@RiskEnum.Low.ToString()">N1,000,000</option>
+                        <option value="@RiskEnum.Modereate.ToString()">Risk the N1,000,000 on spinning a wheel with a 50-50 chance of winning N2,500,000</option>
+                        <option value="@RiskEnum.High.ToString()">Risk the N1,000,000 on spinning a wheel with a 5% chance of winning N10,000,000</option>
+                    </select>
+                    @Html.ValidationMessageFor(model => model.TvShow, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-12">
+                    @Html.LabelFor(model => model.BestFriend, new { @class = "control-label" })<span class="required">*</span>
+                    <select data-val="true" data-val-required="The field is required!" value="@Model.BestFriend" id="BestFriend" name="BestFriend" class="form-control" required>
+                        <option value="">Select an Answer</option>
+                        <option value="@RiskEnum.Low.ToString()">N1,000,000</option>
+                        <option value="@RiskEnum.Modereate.ToString()">Cautious</option>
+                        <option value="@RiskEnum.High.ToString()">A real risk taker</option>
+                    </select>
+                    @Html.ValidationMessageFor(model => model.BestFriend, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-12">
+                    @Html.LabelFor(model => model.Invest, new { @class = "control-label" })<span class="required">*</span>
+                    <select data-val="true" data-val-required="The field is required!" value="@Model.Invest" id="Invest" name="Invest" class="form-control" required>
+                        <option value="">Select an Answer</option>
+                        <option value="@RiskEnum.Low.ToString()">Deposit it in a bank account, money market account, or an insured certificate of deposit</option>
+                        <option value="@RiskEnum.Modereate.ToString()">Invest it in safe, high-quality bonds or bond mutual funds</option>
+                        <option value="@RiskEnum.High.ToString()">Invest it in stocks or stock mutual funds</option>
+                    </select>
+                    @Html.ValidationMessageFor(model => model.Invest, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-12">
+                    <button type="submit" class="btn btn-purple waves-effect waves-light pull-right">Next<i class="fa fa-forward"></i></button>
+                    <a href="@Url.Action("IdealRetirement")" class="btn btn-purple waves-effect waves-light pull-right">Back</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+@section Script
+    {
+
+    <script src="~/datepicker/js/bootstrap-datepicker.js"></script>
+    <script>
+        $('.datepicker').datepicker({
+            endDate: new Date()
+        });
+    </script>
+}

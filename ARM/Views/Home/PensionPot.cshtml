@@ -1,0 +1,141 @@
+﻿@using ARM.Models.Enum
+@using Microsoft.AspNetCore.Http
+@using Opmas.Models.Enum
+@model ARM.Models.Application.Profiling
+@{
+    ViewBag.Title = "Pension Pot & Contribution";
+    Layout = "_Layout";
+}
+<style>
+    .about_slider-area {
+        height: 180px !important;
+    }
+
+    .contact-us-section {
+        padding-top: 0px !important
+    }
+</style>
+<div class="about_slider-area pt-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="slider-text-2 text-center pt-40">
+                    <h2 class="color-w font-w-8 font-40 pb-20">Pension Pots & Contribution!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="contact-us-section pb-30">
+    <div class="container">
+        <div class="form-box clearfix">
+            @using (Html.BeginForm("PensionPot", "Home", FormMethod.Post, new { @class = "shake scroll-reveal", enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(n=>n.DateOfBirth)
+                @Html.HiddenFor(n=>n.Gender)
+                @Html.HiddenFor(n=>n.MartitalStatus)
+                @Html.HiddenFor(n=>n.AnnualSalary)
+                @Html.HiddenFor(n=>n.RetirementAge)
+                if (Context.Session.GetString("result") != null)
+                {
+                    @Html.HiddenFor(n=>n.IdealRetirementBalance)
+                    @Html.HiddenFor(n=>n.RetirementHome)
+                    @Html.HiddenFor(n=>n.RetirementDependants)
+                    @Html.HiddenFor(n=>n.Will)
+                    @Html.HiddenFor(n=>n.IncomeAsideRsa)
+                    @Html.HiddenFor(n=>n.Invest)
+                    @Html.HiddenFor(n=>n.BestFriend)
+                    @Html.HiddenFor(n=>n.TvShow)
+                }
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.RsaAccount, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.DropDownListFor(model => model.RsaAccount, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control",id= "dropdownRsaAccount" })
+                    @Html.ValidationMessageFor(model => model.RsaAccount, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6" id="armRegisteredDiv">
+                    @Html.LabelFor(model => model.ArmPensionRegistered, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.DropDownListFor(model => model.ArmPensionRegistered, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ArmPensionRegistered, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.CurrentRetirementSavingBalance, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.EditorFor(model => model.CurrentRetirementSavingBalance, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your current savings retirement balance" } })
+                    @Html.ValidationMessageFor(model => model.CurrentRetirementSavingBalance, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.MonthlyEmployeeContribution, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.EditorFor(model => model.MonthlyEmployeeContribution, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your monthly employee contribution" } })
+                    @Html.ValidationMessageFor(model => model.MonthlyEmployeeContribution, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.MonthlyEmployerContribution, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.EditorFor(model => model.MonthlyEmployerContribution, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your monthly employer contribution" } })
+                    @Html.ValidationMessageFor(model => model.MonthlyEmployerContribution, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.VoluntaryContributions, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.DropDownListFor(model => model.VoluntaryContributions, Html.GetEnumSelectList(typeof(YesNo)).OrderByDescending(n => n.Value), "Select an Answer", new { @class = "form-control", id="dropdownContributions" })
+                    @Html.ValidationMessageFor(model => model.VoluntaryContributions, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6" id="contributionDiv1">
+                    @Html.LabelFor(model => model.PaymentPerVoluntaryContributions, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.EditorFor(model => model.PaymentPerVoluntaryContributions, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your monthly employer contribution" } })
+                    @Html.ValidationMessageFor(model => model.PaymentPerVoluntaryContributions, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6" id="contributionDiv2">
+                    @Html.LabelFor(model => model.FrequencyOfVoluntaryContributions, new { @class = "control-label" })<span class="required">*</span>
+                    @Html.DropDownListFor(model => model.FrequencyOfVoluntaryContributions, Html.GetEnumSelectList(typeof(PaymentFrequency)).OrderBy(n => n.Value), "Select Frequency", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.FrequencyOfVoluntaryContributions, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-12">
+                    <button type="submit" class="btn btn-purple waves-effect waves-light pull-right">Next</button>
+                    <a href="@Url.Action("BasicInfo")" class="btn btn-purple waves-effect waves-light pull-right">Back</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+@section Script
+{
+    <script>
+        if ($("#dropdownRsaAccount").val() == "1") {
+            $("#armRegisteredDiv").hide(100);
+        }
+        if ($("#dropdownRsaAccount") == "0") {
+            $("#armRegisteredDiv").show(100);
+        }
+        if ($("#dropdownContributions").val() == "1") {
+            $("#contributionDiv1").hide(100);
+            $("#contributionDiv2").hide(100);
+        }
+        if ($("#dropdownContributions").val() == "0") {
+            $("#contributionDiv1").show(100);
+            $("#contributionDiv2").show(100);
+        }
+    </script>
+    <script>
+        
+        $("#dropdownRsaAccount").change(function () {
+            if ($(this).val() == "1") {
+                $("#armRegisteredDiv").hide(100);
+            }
+            if ($(this).val() == "0") {
+                $("#armRegisteredDiv").show(100);
+            }
+        });
+        $("#dropdownContributions").change(function () {
+            console.log($(this).val());
+            if ($(this).val() == "1") {
+                $("#contributionDiv1").hide(100);
+                $("#contributionDiv2").hide(100);
+            }
+            if ($(this).val() == "0") {
+                $("#contributionDiv1").show(100);
+                $("#contributionDiv2").show(100);
+            }
+        });
+ 
+    </script>
+}
