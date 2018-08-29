@@ -16,7 +16,7 @@
         showLegend: true,
         nextBtn: $('<a class="next-btn sf-right sf-btn" href="#">NEXT</a>'),
         prevBtn: $('<a class="prev-btn sf-left sf-btn" href="#">PREV</a>'),
-        finishBtn: $('<input class="finish-btn sf-right sf-btn" type="submit" value="FINISH"/>'),
+        finishBtn: $('<input class="finish-btn sf-right sf-btn" type="submit" id="submitButton" value="FINISH"/>'),
         onNext: function(from, data) {},
         onPrev: function(from, data) {},
         onFinish: function(from, data) {},

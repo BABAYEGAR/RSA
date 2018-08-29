@@ -13,13 +13,13 @@
         data = JsonConvert.DeserializeObject<CustomerData>(Context.Session.GetString("customerData"));
     }
 }
-<h1>Retirement Lifestyle Planner POC</h1>
+<h1>Retirement Lifestyle Planner</h1>
 @using (Html.BeginForm("SignUp", "Home", FormMethod.Post, new { @class = "sf-border", id = "wizard_example", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <legend>Please Provide your Basic Information to view the result</legend>
+<legend>To see your result please provide us with the following information - full name, email and mobile number</legend>
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
@@ -48,4 +48,41 @@
         </div>
     </div>
 
+}
+@section Script
+{
+    <script>
+        var defaults = {
+            duration: 1000,
+            transition: 'slide',
+            linkNav: true, // true, false, prev
+            showNav: true, // true = top, false , right, bottom, left
+            showNavNumbers: true,
+            showButtons: true,
+            showLegend: true,
+            nextBtn: $('<a class="next-btn sf-right sf-btn" href="#">NEXT</a>'),
+            prevBtn: $('<a class="prev-btn sf-left sf-btn" href="#">PREV</a>'),
+            finishBtn: $('<input class="finish-btn sf-right sf-btn" type="submit" id="submitButton" value="View Results"/>'),
+            onNext: function(from, data) {},
+            onPrev: function(from, data) {},
+            onFinish: function(from, data) {},
+            onSlideChanged: function(to, data) {},
+            startStep: 0,
+            rtl: false,
+            height: 'first', // auto, tallest, first, 200
+            theme: 'sea', // sea, sky, simple, circle, sun
+            markPrevSteps: false,
+            stepElement: 'fieldset',
+            stepNameElement: 'legend',
+            disableEnter: false,
+            smallMobileNav: true,
+            debug: false,
+            spinner:    '<div class="spinner">'
+                +'<div class="ball-1"></div>'
+                +'<div class="ball-2"></div>'
+                +'<div class="ball-3"></div>'
+                +'</div>'
+        }
+
+    </script>
 }

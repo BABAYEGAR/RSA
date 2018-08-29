@@ -1,13 +1,14 @@
 ﻿@model ARM.Models.Application.Result
 @{
     Layout = "_LayoutCalculate";
-    ViewBag.Title = "Result & Recommendation";
+    ViewBag.Title = "Results & Recommendation";
     var otherRetirementBalance = 20 * Model?.OtherIncome;
     var avc = Model?.ExpectedRetirementBalance + otherRetirementBalance;
     avc = avc - Model?.IdealRetirementBalance;
     string appetite = null;
     string ageLimt = null;
     string ageLimtSuggestion = null;
+    string ageLimtDescription = null;
     string appetiteRate = null;
     decimal programmedAmount;
     double k3 = 148758454.48;
@@ -23,46 +24,63 @@
     {
         programmedAmount = (decimal) r3;
     }
-
     if (Model?.RiskAppetite == "FundOne")
     {
         appetite = "Fund I";
-        ageLimt = "49yrs & below";
+        ageLimtDescription = "The " + @appetite + " Fund can only be accessed by a RSA Holder completing a consent form";
+        appetiteRate = "20% - 75%";
     }
-    if (Model?.RiskAppetite == "FundTwo")
+    else if (Model?.RiskAppetite == "FundTwo")
     {
         appetite = "Fund II";
         ageLimt = "49yrs & below";
+        ageLimtDescription = "The " + @appetite + " is a balanced risk profile which is the default fund for RSA Holders 49 years & below";
+        appetiteRate = "10% - 55%";
     }
-    if (Model?.RiskAppetite == "FundThree")
+    else if (Model?.RiskAppetite == "FundThree")
     {
         appetite = "Fund III";
         ageLimt = "50yrs & above";
+        ageLimtDescription = "The " + @appetite + " is the Default Fund for RSA Holders 50years and above, who are still working";
+        appetiteRate = "5% - 20%";
     }
-    if (Model?.RiskAppetite == "FundFour")
+    else  if (Model?.RiskAppetite == "FundFour")
     {
         appetite = "Fund IV";
         ageLimt = "50yrs & above";
+        ageLimtDescription = "The " + @appetite + " is for Retirees only";
+        appetiteRate = "0% - 10%";
+    }
+    else
+    {
+        appetite = "Fund I";
+        ageLimtDescription = "The " + @appetite + " Fund can only be accessed by a RSA Holder completing a consent form";
+        appetiteRate = "20% - 75%";
     }
     if (Model?.Age < 49 && Model.RSA == "0" || Model?.RSA == "Yes")
     {
         ageLimtSuggestion = "Fund I";
-        appetiteRate = "10% - 55%";
+
+
+
     }
     else if (Model?.Age < 49 && Model.RSA == "1" || Model?.RSA == "No")
     {
         ageLimtSuggestion = "Fund II";
-        appetiteRate = "20% - 75%";
+
+
     }
     else if (Model?.Age > 50 && Model.RSA == "0" || Model?.RSA == "Yes")
     {
         ageLimtSuggestion = "Fund II";
-        appetiteRate = "5% - 20%";
+
+
     }
     else
     {
         ageLimtSuggestion = "No Movement";
-        appetiteRate = "0% - 10%";
+
+
     }
 }
 
@@ -72,16 +90,11 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new {@class = "text-danger"})
     <fieldset>
-        <legend>Result & Recommendation </legend>
+        <legend>Results & Recommendation </legend>
         <div class="row">
             <div class="col-lg-12">
-                <h3>Pension Calculator(Click <a href="@Url.Action("Calculate")">here</a> to modify information!)</h3>
+                <h3>Pension Calculator(Click <a href="@Url.Action("Calculate")">here</a> to modify your input!)</h3>
             </div>
-
-            <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 10px;">
-                <img class="card-img-top" src="https://png.icons8.com/color/480/000000/ok.png" width="180" alt="Card image cap" style="display: block; margin-left: auto; margin-right: auto;">
-            </div>
-
 
         </div>
         <div class="row">
@@ -124,7 +137,7 @@
                                     <br/>
                                     <li>To achieve your ideal retirement balance of &#8358 @string.Format("{0:n0}", Model?.IdealRetirementBalance) , we recommend an adjusted annual AVC of &#8358 @string.Format("{0:n0}", Model?.AdjustedAnualAvc) . We have assumed a new AVC amount of &#8358 @string.Format("{0:n0}", Model?.AdjustedAnualAvcCloseShortfall) to close the shortfall between your expected retirement balance and ideal retirement balance.</li>
                                     <br/>
-                                    <li>With an annual salary increase rate at 4%, your annual, your projected annual salary at retirement is &#8358 @string.Format("{0:n0}", Model?.ProjectedAnnualSalary).</li>
+                                    <li>With an annual salary increase rate at 4%, your projected annual salary at retirement is &#8358 @string.Format("{0:n0}", Model?.ProjectedAnnualSalary).</li>
                                     <br/>
                                     <li>Based on Pencom’s statutory regulation for computing programmed withdrawals at 8% per annum, your allowable monthly programmed withdrawal payment at retirement is &#8358 @string.Format("{0:n0}", programmedAmount).</li>
 
@@ -144,7 +157,7 @@
                             <div class="panel-body">
                                 <p>
                                     Based on your age and risk appetite, we recommend the @appetite.
-                                    The @appetite is a balanced risk profile which is the default fund for RSA Holders @ageLimt.
+                                    @ageLimtDescription.
                                     You are exposed to @appetiteRate variable investment instruments within your portfolio.
 
                                     There is a possibility you can move to @ageLimtSuggestion based on your risk appetite.
@@ -225,7 +238,7 @@
 
                     </div>
                     <br/>
-                    <button type="submit" class="btn btn-success" style="color: white">Rate!</button>
+                    <button type="submit" class="btn btn-success pull-right" style="color: white">Rate!</button>
 
                 </p>
             </div>
@@ -254,7 +267,11 @@
         };
         var emotionsArray = ['angry', 'disappointed', 'meh', 'happy', 'inLove'];
         $("#myRating").emotionsRating({
-            emotions: emotionsArray
+            emotions: emotionsArray,
+            // size of emoji
+            emotionSize: 70,
+            initialRating: 3
+
         });
     </script>
 }
