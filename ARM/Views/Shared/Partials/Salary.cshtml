@@ -2,13 +2,13 @@
 <!--Salary -->
 <fieldset>
     <legend>Salary</legend>
-    @Html.LabelFor(model => model.AnnualSalary, new { @class = "control-label" })<span class="required">*</span>
-    <input type="range" class="form-control" id="salaryRange" name="AnnualSalary" value="@Model?.AnnualSalary" step="25" min="1000" max="100000000" required>
-    @Html.ValidationMessageFor(model => model.AnnualSalary, "", new { @class = "text-danger" })
-    <div class="range">
-        <small class="min pull-left">Min</small>
-        <small class="max pull-right">Max</small>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                @Html.LabelFor(model => model.AnnualSalary, new { @class = "control-label" })<span class="required">*</span><a href="#" data-toggle="tooltip" title="Your salary will be used to calculate your pension contributions and for estimating the target income in your retirement."><i class="fa fa-info-circle" style="padding-left: 5px;"></i></a>
+                <input class="form-control" name="AnnualSalary" value="@Model?.AnnualSalary" placeholder="Please enter your annual salary" required data-parsley-group="block1">
+                @Html.ValidationMessageFor(model => model.AnnualSalary, "", new { @class = "text-danger" })
+            </div>
+        </div>
     </div>
-
-
 </fieldset>

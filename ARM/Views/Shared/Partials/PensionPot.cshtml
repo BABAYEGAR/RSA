@@ -5,80 +5,67 @@
     <legend>Pension Pot and Contribution </legend>
     <div class="row">
         <div class="form-group col-md-6">
-            @Html.LabelFor(model => model.RsaAccount, new { @class = "control-label" })<span class="required">*</span>
-            @Html.DropDownListFor(model => model.RsaAccount, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control", id = "dropdownRsaAccount" })
+            @Html.LabelFor(model => model.RsaAccount, new { @class = "control-label" })<span class="required">*</span><a href="#" data-toggle="tooltip" title="Every employee or contributor under the new pension scheme is expected to open RSA in his/her name with a PFA of his/her choice into which all his/her contributions and returns on investment are paid."><i class="fa fa-info-circle" style="padding-left: 5px;"></i></a>
+            @Html.DropDownListFor(model => model.RsaAccount, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), new { @class = "form-control", id = "dropdownRsaAccount" })
             @Html.ValidationMessageFor(model => model.RsaAccount, "", new { @class = "text-danger" })
         </div>
         <div class="form-group col-md-6" id="armRegisteredDiv">
             @Html.LabelFor(model => model.ArmPensionRegistered, new { @class = "control-label" })<span class="required">*</span>
-            @Html.DropDownListFor(model => model.ArmPensionRegistered, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control" })
+            @Html.DropDownListFor(model => model.ArmPensionRegistered, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.ArmPensionRegistered, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group col-md-6">
             @Html.LabelFor(model => model.VoluntaryContributions, new { @class = "control-label" })<span class="required">*</span>
-            @Html.DropDownListFor(model => model.VoluntaryContributions, Html.GetEnumSelectList(typeof(YesNo)).OrderByDescending(n => n.Value), "Select an Answer", new { @class = "form-control", id = "dropdownContributions" })
+            @Html.DropDownListFor(model => model.VoluntaryContributions, Html.GetEnumSelectList(typeof(YesNo)).OrderByDescending(n => n.Value), new { @class = "form-control", id = "dropdownContributions" })
             @Html.ValidationMessageFor(model => model.VoluntaryContributions, "", new { @class = "text-danger" })
         </div>
 
     </div>
 
-
     <div class="row">
         <div class="col-lg-12">
-            @Html.LabelFor(model => model.CurrentRetirementSavingBalance, new { @class = "control-label" })<span class="required">*</span>
-            <input type="range" class="form-control" id="retirementSavings" name="CurrentRetirementSavingBalance" value="@Model?.CurrentRetirementSavingBalance" step="100" min="1000" max="50000000" required>
-
-            <div class="range">
-                <small class="min pull-left">Min</small>
-                <small class="max pull-right">Max</small>
+            <div class="form-group">
+                @Html.LabelFor(model => model.CurrentRetirementSavingBalance, new { @class = "control-label" })<span class="required">*</span>
+                <input class="form-control" name="CurrentRetirementSavingBalance" value="@Model?.CurrentRetirementSavingBalance" placeholder="Please enter your current retirement savings balance" required data-parsley-group="block3">
+                @Html.ValidationMessageFor(model => model.CurrentRetirementSavingBalance, "", new { @class = "text-danger" })
             </div>
-            @Html.ValidationMessageFor(model => model.CurrentRetirementSavingBalance, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-12">
-            @Html.LabelFor(model => model.MonthlyEmployeeContribution, new { @class = "control-label" })<span class="required">*</span>
-            <input type="range" class="form-control" id="empolyeeContribution" name="MonthlyEmployeeContribution" value="@Model?.MonthlyEmployeeContribution" step="100" min="1000" max="50000000" required>
-
-            <div class="range">
-                <small class="min pull-left">Min</small>
-                <small class="max pull-right">Max</small>
+            <div class="form-group">
+                @Html.LabelFor(model => model.MonthlyEmployeeContribution, new { @class = "control-label" })<span class="required">*</span><a href="#" data-toggle="tooltip" title=" This is what you pay into your pension, not your employer."><i class="fa fa-info-circle" style="padding-left: 5px;"></i></a>
+                <input class="form-control" name="MonthlyEmployeeContribution" value="@Model?.MonthlyEmployeeContribution" placeholder="Please enter your monthly employee contribution" required data-parsley-group="block3">
+                @Html.ValidationMessageFor(model => model.MonthlyEmployeeContribution, "", new { @class = "text-danger" })
             </div>
-            @Html.ValidationMessageFor(model => model.MonthlyEmployeeContribution, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-12">
-            @Html.LabelFor(model => model.MonthlyEmployerContribution, new { @class = "control-label" })<span class="required">*</span>
-            <input type="range" class="form-control" name="MonthlyEmployerContribution" id="employerContribution" value="@Model?.MonthlyEmployerContribution" step="100" min="1000" max="50000000" required>
-
-            <div class="range">
-                <small class="min pull-left">Min</small>
-                <small class="max pull-right">Max</small>
+            <div class="form-group">
+                @Html.LabelFor(model => model.MonthlyEmployerContribution, new { @class = "control-label" })<span class="required">*</span><a href="#" data-toggle="tooltip" title="This is what your employer pays into your pension."><i class="fa fa-info-circle" style="padding-left: 5px;"></i></a>
+                <input class="form-control" name="MonthlyEmployerContribution" value="@Model?.MonthlyEmployerContribution" placeholder="Please enter your monthly employer contribution" required data-parsley-group="block3">
+                @Html.ValidationMessageFor(model => model.MonthlyEmployerContribution, "", new { @class = "text-danger" })
             </div>
-            @Html.ValidationMessageFor(model => model.MonthlyEmployerContribution, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="row">
         <div class="col-lg-12" id="contributionDiv1">
-            @Html.LabelFor(model => model.PaymentPerVoluntaryContributions, new { @class = "control-label" })<span class="required">*</span>
-            <input type="range" class="form-control" name="PaymentPerVoluntaryContributions" id="voluntaryContribution" value="@Model?.PaymentPerVoluntaryContributions" step="25" min="1000" max="70000" required>
-
-            <div class="range">
-                <small class="min pull-left">Min</small>
-                <small class="max pull-right">Max</small>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PaymentPerVoluntaryContributions, new { @class = "control-label" })
+                <input class="form-control" name="PaymentPerVoluntaryContributions" value="@Model?.MonthlyEmployerContribution" placeholder="Please enter your payment voluntary contribution">
+                @Html.ValidationMessageFor(model => model.PaymentPerVoluntaryContributions, "", new { @class = "text-danger" })
             </div>
-            @Html.ValidationMessageFor(model => model.PaymentPerVoluntaryContributions, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12" id="contributionDiv2">
             @Html.LabelFor(model => model.FrequencyOfVoluntaryContributions, new { @class = "control-label" })<span class="required">*</span>
-            @Html.DropDownListFor(model => model.FrequencyOfVoluntaryContributions, Html.GetEnumSelectList(typeof(PaymentFrequency)).OrderBy(n => n.Value), "Select Frequency", new { @class = "form-control" })
+            @Html.DropDownListFor(model => model.FrequencyOfVoluntaryContributions, Html.GetEnumSelectList(typeof(PaymentFrequency)).OrderBy(n => n.Value), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.FrequencyOfVoluntaryContributions, "", new { @class = "text-danger" })
         </div>
     </div>

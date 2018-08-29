@@ -1,11 +1,19 @@
-﻿@using ARM.Models.Enum
+﻿@using ARM.Models.Application
+@using ARM.Models.Enum
 @using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
 @using Opmas.Models.Enum
 @model ARM.Models.Application.CustomerData
 @{
     Layout = "_LayoutCalculate";
+    ViewBag.Title = "Sign Up";
+    CustomerData data = null;
+    if (!String.IsNullOrEmpty(Context.Session.GetString("customerData")))
+    {
+        data = JsonConvert.DeserializeObject<CustomerData>(Context.Session.GetString("customerData"));
+    }
 }
-<h1>Retirement Lifstyle Planner POC</h1>
+<h1>Retirement Lifestyle Planner POC</h1>
 @using (Html.BeginForm("SignUp", "Home", FormMethod.Post, new { @class = "sf-border", id = "wizard_example", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -16,7 +24,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 @Html.LabelFor(model => model.Name, new { @class = "control-label" })<span class="required">*</span>
-                <input class="form-control" name="Name" value="@Model?.Name" placeholder="Please enter your full name" required data-parsley-group="block0">
+                <input class="form-control" name="Name" value="@data?.Name" placeholder="Please enter your full name" required data-parsley-group="block0">
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -25,7 +33,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 @Html.LabelFor(model => model.Email, new { @class = "control-label" })<span class="required">*</span>
-                <input type="email" class="form-control" name="Email" value="@Model?.Email" placeholder="Please enter your email address" required data-parsley-group="block0">
+                <input type="email" class="form-control" name="Email" value="@data?.Email" placeholder="Please enter your email address" required data-parsley-group="block0">
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,7 +42,7 @@
         <div class="col-md-12">
             <div class="form-group">
                 @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label" })<span class="required">*</span>
-                <input class="form-control" name="PhoneNumber" value="@Model?.Email" placeholder="Please enter your phone number" required data-parsley-group="block0">
+                <input class="form-control" name="PhoneNumber" value="@data?.Email" placeholder="Please enter your phone number" required data-parsley-group="block0">
                 @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -6,34 +6,11 @@
 }
 
 
-<h1>Retirement Lifstyle Calculator & Planner</h1>
+<h1>Retirement Lifestyle Planner</h1>
 @using (Html.BeginForm("Calculate", "Home", FormMethod.Post, new {@class = "sf-border", id = "wizard_example", enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-    if (Context.Session.GetString("result") != null)
-    {
-        @Html.HiddenFor(n=>n.DateOfBirth)
-        @Html.HiddenFor(n=>n.Gender)
-        @Html.HiddenFor(n=>n.MartitalStatus)
-        @Html.HiddenFor(n=>n.AnnualSalary)
-        @Html.HiddenFor(n=>n.RsaAccount)
-        @Html.HiddenFor(n=>n.ArmPensionRegistered)
-        @Html.HiddenFor(n=>n.CurrentRetirementSavingBalance)
-        @Html.HiddenFor(n=>n.MonthlyEmployerContribution)
-        @Html.HiddenFor(n=>n.MonthlyEmployeeContribution)
-        @Html.HiddenFor(n=>n.VoluntaryContributions)
-        @Html.HiddenFor(n=>n.PaymentPerVoluntaryContributions)
-        @Html.HiddenFor(n=>n.FrequencyOfVoluntaryContributions)
-        @Html.HiddenFor(n=>n.IdealRetirementBalance)
-        @Html.HiddenFor(n=>n.RetirementHome)
-        @Html.HiddenFor(n=>n.RetirementDependants)
-        @Html.HiddenFor(n=>n.Will)
-        @Html.HiddenFor(n=>n.IncomeAsideRsa)
-        @Html.HiddenFor(n=>n.Invest)
-        @Html.HiddenFor(n=>n.BestFriend)
-        @Html.HiddenFor(n=>n.TvShow)
-    }
 
     await Html.RenderPartialAsync("Partials/AboutYou");
     await Html.RenderPartialAsync("Partials/Salary");

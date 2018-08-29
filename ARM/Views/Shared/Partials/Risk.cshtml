@@ -12,16 +12,35 @@
                     <div class="funkyradio">
                         <label>You won a TV game show, you are offered a choice of the following prices, which would you choose?</label>
                         <div class="funkyradio-default">
-                            <input type="radio" name="TvShow" value="@RiskEnum.Low.ToString()" id="radio1" />
+                            @if (Model?.TvShow == RiskEnum.Low.ToString())
+                            {
+                                <input type="radio" name="TvShow" value="@RiskEnum.Low.ToString()" id="radio1" checked/>
+                            }
+                            else
+                            {
+                                <input type="radio" name="TvShow" value="@RiskEnum.Low.ToString()" id="radio1"/>
+                            }
                             <label for="radio1">N1,000,000</label>
                         </div>
                         <div class="funkyradio-primary">
-                            <input type="radio" name="TvShow" value="@RiskEnum.Modereate.ToString()" id="radio2" checked />
-                            <label for="radio2">Risk the N1,000,000 on spinning a wheel with a 50-50 chance of winning N2,500,000</label>
+                            @if (Model?.TvShow == RiskEnum.Modereate.ToString())
+                            {
+                                <input type="radio" name="TvShow" value="@RiskEnum.Modereate.ToString()" id="radio2" checked/>
+                            }
+                            else
+                            { <input type="radio" name="TvShow" value="@RiskEnum.Modereate.ToString()" id="radio2" />
+
+                            }<label for="radio2">Risk the N1,000,000 on spinning a wheel with a 50-50 chance of winning N2,500,000</label>
                         </div>
                         <div class="funkyradio-success">
-                            <input type="radio" value="@RiskEnum.High.ToString()" name="TvShow" id="radio3" />
-                            <label for="radio3">Risk the N1,000,000 on spinning a wheel with a 5% chance of winning N10,000,000</label>
+                        @if (Model?.TvShow == RiskEnum.High.ToString())
+                        {
+                            <input type="radio" value="@RiskEnum.High.ToString()" name="TvShow" id="radio3" checked/>
+                        }
+                        else
+                        {
+                            <input type="radio" value="@RiskEnum.High.ToString()" name="TvShow" id="radio3"/>
+                        }<label for="radio3">Risk the N1,000,000 on spinning a wheel with a 5% chance of winning N10,000,000</label>
                         </div>
                     </div>
                 </div>
@@ -36,15 +55,36 @@
                     <div class="funkyradio">
                         <label>In general, how would your best friend describe you?</label>
                         <div class="funkyradio-default">
-                            <input type="radio" value="@RiskEnum.Low.ToString()" name="BestFriend" id="radio4" />
+                        @if (Model?.BestFriend == RiskEnum.Low.ToString())
+                        {
+                            <input type="radio" value="@RiskEnum.Low.ToString()" name="BestFriend" id="radio4" checked/>
+                        }
+                        else
+                        {
+                            <input type="radio" value="@RiskEnum.Low.ToString()" name="BestFriend" id="radio4"/>
+                        }
                             <label for="radio4">Cautious</label>
                         </div>
                         <div class="funkyradio-primary">
-                            <input type="radio" name="BestFriend" value="@RiskEnum.Modereate.ToString()" id="radio5" checked />
+                        @if (Model?.BestFriend == RiskEnum.Modereate.ToString())
+                        {
+                            <input type="radio" name="BestFriend" value="@RiskEnum.Modereate.ToString()" id="radio5" checked/>
+                        }
+                        else
+                        {
+                            <input type="radio" name="BestFriend" value="@RiskEnum.Modereate.ToString()" id="radio5"/>
+                        }
                             <label for="radio5">Willing to take risks after adequate research</label>
                         </div>
                         <div class="funkyradio-success">
-                            <input type="radio" name="BestFriend" value="@RiskEnum.High.ToString()" id="radio6" />
+                        @if (Model?.BestFriend == RiskEnum.High.ToString())
+                        {
+                            <input type="radio" name="BestFriend" value="@RiskEnum.High.ToString()" id="radio6" checked/>
+                        }
+                        else
+                        {
+                            <input type="radio" name="BestFriend" value="@RiskEnum.High.ToString()" id="radio6"/>
+                        }
                             <label for="radio6">A real risk taker</label>
                         </div>
                     </div>
@@ -64,15 +104,36 @@
                     <div class="funkyradio">
                         <label>If you unexpectedly received N5,000,000 to invest, what would you do?</label>
                         <div class="funkyradio-default">
-                            <input type="radio" name="Invest" value="@RiskEnum.Low.ToString()" id="radio7" />
+                            @if (Model?.Invest == RiskEnum.Low.ToString())
+                            {
+                                <input type="radio" name="Invest" value="@RiskEnum.Low.ToString()" id="radio7" checked/>
+                            }
+                            else
+                            {
+                                <input type="radio" name="Invest" value="@RiskEnum.Low.ToString()" id="radio7" />
+                            }
                             <label for="radio7">Deposit it in a bank aacount, money market account, or an insured certificate of deposit</label>
                         </div>
                         <div class="funkyradio-primary">
-                            <input type="radio" name="Invest" value="@RiskEnum.Modereate.ToString()" id="radio8" />
+                        @if (Model?.Invest == RiskEnum.Modereate.ToString())
+                        {
+                            <input type="radio" name="Invest" value="@RiskEnum.Modereate.ToString()" id="radio8" checked/>
+                        }
+                        else
+                        {
+                            <input type="radio" name="Invest" value="@RiskEnum.Modereate.ToString()" id="radio8"/>
+                        }
                             <label for="radio8">Invest it in safe, high-quality bonds or bond mutual funds</label>
                         </div>
                         <div class="funkyradio-success">
-                            <input type="radio" name="Invest" value="@RiskEnum.High.ToString()" id="radio9" />
+                        @if (Model?.Invest == RiskEnum.High.ToString())
+                        {
+                            <input type="radio" name="Invest" value="@RiskEnum.High.ToString()" id="radio9" checked/>
+                        }
+                        else
+                        {
+                            <input type="radio" name="Invest" value="@RiskEnum.High.ToString()" id="radio9"/>
+                        }
                             <label for="radio9">Invest it in stocks or stock mutual funds</label>
                         </div>
                     </div>

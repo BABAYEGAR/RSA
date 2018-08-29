@@ -9,6 +9,21 @@
     string ageLimt = null;
     string ageLimtSuggestion = null;
     string appetiteRate = null;
+    decimal programmedAmount;
+    double k3 = 148758454.48;
+    double l3 = 123824428.69;
+    double p3 = 800935.72;
+    double r3 = 1002882.02;
+
+    if (k3 == l3)
+    {
+        programmedAmount = (decimal) p3;
+    }
+    else
+    {
+        programmedAmount = (decimal) r3;
+    }
+
     if (Model?.RiskAppetite == "FundOne")
     {
         appetite = "Fund I";
@@ -79,9 +94,9 @@
                                 <th>Retirement Age</th>
                                 <th>Expected Retirement Balance</th>
                                 <th>Ideal Retirement Balance</th>
-                                <th>Shortfall/Surplus</th>
+                                <th style="width: 15%">Shortfall/Surplus</th>
                                 <th>Projected Annual Salary</th>
-                                <th>Monthly Programmed Withdrawal Payment</th>
+                                <th style="width: 15%">Monthly Programmed Withdrawal Payment</th>
                             </tr>
                             <tr>
                                 <td style="font-weight: bolder">@Model?.Age</td>
@@ -89,7 +104,7 @@
                                 <td style="font-weight: bolder">&#8358 @string.Format("{0:n0}", Model?.IdealRetirementBalance)</td>
                                 <td style="font-weight: bolder">&#8358 @string.Format("{0:n0}", avc)</td>
                                 <td style="font-weight: bolder">&#8358 @string.Format("{0:n0}", Model?.ProjectedAnnualSalary)</td>
-                                <td style="font-weight: bolder">&#8358 @string.Format("{0:n0}", Model?.MonthlyProgrammedWithdrawalPayment)</td>
+                                <td style="font-weight: bolder">&#8358 @string.Format("{0:n0}", programmedAmount)</td>
                             </tr>
                         </table>
                     </div>
@@ -111,7 +126,7 @@
                                     <br/>
                                     <li>With an annual salary increase rate at 4%, your annual, your projected annual salary at retirement is &#8358 @string.Format("{0:n0}", Model?.ProjectedAnnualSalary).</li>
                                     <br/>
-                                    <li>Based on Pencom’s statutory regulation for computing programmed withdrawals at 8% per annum, your allowable monthly programmed withdrawal payment at retirement is &#8358 @string.Format("{0:n0}", Model?.MonthlyProgrammedWithdrawalPayment).</li>
+                                    <li>Based on Pencom’s statutory regulation for computing programmed withdrawals at 8% per annum, your allowable monthly programmed withdrawal payment at retirement is &#8358 @string.Format("{0:n0}", programmedAmount).</li>
 
                                 </ul>
                             </div>
@@ -216,34 +231,30 @@
             </div>
 
         </div>
-        <noscript>
-            <input class="nocsript-finish-btn sf-right nocsript-sf-btn" type="submit" value="finish"/>
-        </noscript>
     </fieldset>
 }
-        <script src="~/Landing/js/emotion-ratings.min.js"></script>
-<script>
-    $('.sf-nav').hide();
-    $('#st-accordion > ul > li').addClass('st-open');
-    $('#st-accordion > ul > li div.acc-content').show();
-    $('span').hide();
+@section Script
+{
+    <script src="~/Landing/js/emotion-ratings.min.js"></script>
+    <script>
 
-    var emotionsArray = {
-        angry: "&#x1F620;",
-        disappointed: "&#x1F61E;",
-        meh: "&#x1F610;",
-        happy: "&#x1F60A;",
-        smile: "&#x1F603;",
-        wink: "&#x1F609;",
-        laughing: "&#x1F606;",
-        inLove: "&#x1F60D;",
-        heart: "&#x2764;",
-        crying: "&#x1F622;",
-        star: "&#x2B50;",
-    };
-    var emotionsArray = ['angry', 'disappointed', 'meh', 'happy', 'inLove'];
-    $("#myRating").emotionsRating({
-        emotions: emotionsArray
-    });
-</script>
-    
+
+        var emotionsArray = {
+            angry: "&#x1F620;",
+            disappointed: "&#x1F61E;",
+            meh: "&#x1F610;",
+            happy: "&#x1F60A;",
+            smile: "&#x1F603;",
+            wink: "&#x1F609;",
+            laughing: "&#x1F606;",
+            inLove: "&#x1F60D;",
+            heart: "&#x2764;",
+            crying: "&#x1F622;",
+            star: "&#x2B50;",
+        };
+        var emotionsArray = ['angry', 'disappointed', 'meh', 'happy', 'inLove'];
+        $("#myRating").emotionsRating({
+            emotions: emotionsArray
+        });
+    </script>
+}

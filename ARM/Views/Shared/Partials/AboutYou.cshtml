@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="form-group">
 
-                @Html.LabelFor(model => model.DateOfBirth, new {@class = "control-label"})<span class="required">*</span>
+                @Html.LabelFor(model => model.DateOfBirth, new {@class = "control-label"})<span class="required">*</span><a href="#" data-toggle="tooltip" title="This will affect when we assume you will retire."><i class="fa fa-info-circle" style="padding-left: 5px;"></i></a>
                 <input class="form-control datepicker" name="DateOfBirth" value="@Model?.DateOfBirth.ToString("MM/dd/yyyy")" placeholder="Please select your date of birth" data-date-format="mm/dd/yyyy" required data-parsley-group="block0">
                 @Html.ValidationMessageFor(model => model.DateOfBirth, "", new {@class = "text-danger"})
 
@@ -17,7 +17,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 @Html.LabelFor(model => model.Gender, new {@class = "control-label"})<span class="required">*</span>
-                @Html.DropDownListFor(model => model.Gender, Html.GetEnumSelectList(typeof(Gender)).OrderByDescending(n => n.Value), "Select your Gender", new {@class = "form-control", required = "required"})
+                @Html.DropDownListFor(model => model.Gender, Html.GetEnumSelectList(typeof(Gender)).OrderByDescending(n => n.Value), new {@class = "form-control", required = "required"})
                 @Html.ValidationMessageFor(model => model.Gender, "", new {@class = "text-danger"})
             </div>
         </div>
@@ -26,7 +26,7 @@
             <div class="form-group">
                 <div class="form-group">
                     @Html.LabelFor(model => model.MartitalStatus, new {@class = "control-label"})<span class="required">*</span>
-                    @Html.DropDownListFor(model => model.MartitalStatus, Html.GetEnumSelectList(typeof(MaritalStatus)).OrderByDescending(n => n.Value), "Select your Marital Status", new {@class = "form-control"})
+                    @Html.DropDownListFor(model => model.MartitalStatus, Html.GetEnumSelectList(typeof(MaritalStatus)).OrderByDescending(n => n.Value), new {@class = "form-control"})
                     @Html.ValidationMessageFor(model => model.MartitalStatus, "", new {@class = "text-danger"})
                 </div>
             </div>
@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                @Html.LabelFor(model => model.RetirementAge, new {@class = "control-label"})<span class="required">*</span>
+                @Html.LabelFor(model => model.RetirementAge, new {@class = "control-label"})<span class="required">*</span><a href="#" data-toggle="tooltip" title="Your age at the time of retirement will be used to estimate certain assumptions about your lifestyle expenses."><i class="fa fa-info-circle" style="padding-left: 5px;"></i></a>
                 <input class="form-control" name="RetirementAge" value="@Model?.RetirementAge" placeholder="Please enter your expected retirement age" required data-parsley-group="block0">
                 @Html.ValidationMessageFor(model => model.RetirementAge, "", new {@class = "text-danger"})
             </div>

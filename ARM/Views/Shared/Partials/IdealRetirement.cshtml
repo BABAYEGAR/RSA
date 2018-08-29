@@ -7,18 +7,18 @@
         <div class="col-md-4">
             <div class="form-group">
                 @Html.LabelFor(model => model.IdealRetirementBalance, new { @class = "control-label" })<span class="required">*</span>
-                <input type="number" name="IdealRetirementBalance" class="form-control" placeholder="Please enter your ideal retirement balance" value="@Model?.IdealRetirementBalance" data-parsley-group="block3" required />
+                <input name="IdealRetirementBalance" class="form-control" placeholder="Please enter your ideal retirement balance" value="@Model?.IdealRetirementBalance" data-parsley-group="block3" required />
                 @Html.ValidationMessageFor(model => model.IdealRetirementBalance, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="col-md-4">
-            @Html.LabelFor(model => model.RetirementHome, new { @class = "control-label" })<span class="required">*</span>
-            @Html.DropDownListFor(model => model.RetirementHome, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control" })
+            @Html.LabelFor(model => model.RetirementHome, new { @class = "control-label" })<span class="required">*</span><a href="#" data-toggle="tooltip" title="A Home in this instance refers to a personal house or that belonging to your spouse which you both live in together without paying rent. This will help predict whether you will use your retirement income to pay for accommodation."><i class="fa fa-info-circle" style="padding-left: 5px;"></i></a>
+            @Html.DropDownListFor(model => model.RetirementHome, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.RetirementHome, "", new { @class = "text-danger" })
         </div>
         <div class="col-md-4">
-            @Html.LabelFor(model => model.RetirementDependants, new { @class = "control-label" })<span class="required">*</span>
-            @Html.DropDownListFor(model => model.RetirementDependants, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), "Select an Answer", new { @class = "form-control" })
+            @Html.LabelFor(model => model.RetirementDependants, new { @class = "control-label" })<span class="required">*</span><a href="#" data-toggle="tooltip" title="A Dependant in this case refers to an individual(s) that you will provide a level of periodic financial support to at retirement such as children, parents, relatives, etc."><i class="fa fa-info-circle" style="padding-left: 5px;"></i></a>
+            @Html.DropDownListFor(model => model.RetirementDependants, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.RetirementDependants, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -26,20 +26,17 @@
     <div class="row">
         <div class="col-md-4">
             @Html.LabelFor(model => model.Will, new { @class = "control-label" })<span class="required">*</span>
-            @Html.DropDownListFor(model => model.Will, Html.GetEnumSelectList(typeof(YesNo)).OrderByDescending(n => n.Value), "Select an Answer", new { @class = "form-control" })
+            @Html.DropDownListFor(model => model.Will, Html.GetEnumSelectList(typeof(YesNo)).OrderBy(n => n.Value), new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Will, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
-            @Html.LabelFor(model => model.IncomeAsideRsa, new { @class = "control-label" })<span class="required">*</span>
-            <input type="range" id="incomeRetirement" name="IncomeAsideRsa" class="form-control" value="@Model?.IncomeAsideRsa" step="25" min="1000" max="50000000" required>
-
-            <div class="range">
-                <small class="min pull-left">Min</small>
-                <small class="max pull-right">Max</small>
+            <div class="form-group">
+                @Html.LabelFor(model => model.IncomeAsideRsa, new { @class = "control-label" })<span class="required">*</span>
+                <input class="form-control" name="IncomeAsideRsa" value="@Model?.IncomeAsideRsa" placeholder="Please enter other income aside RSA" required data-parsley-group="block3">
+                @Html.ValidationMessageFor(model => model.IncomeAsideRsa, "", new { @class = "text-danger" })
             </div>
-            @Html.ValidationMessageFor(model => model.IncomeAsideRsa, "", new { @class = "text-danger" })
         </div>
     </div>
 </fieldset>

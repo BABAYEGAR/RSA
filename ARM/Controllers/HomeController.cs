@@ -136,7 +136,9 @@ namespace ARM.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult SubmitRating(IFormCollection collection)
         {
-            var rating = Convert.ToInt64(collection["ratings[]"]);
+            var rating = collection["ratings[]"].ToString() != "undefined" ? Convert.ToInt64(collection["ratings[]"]) : 0;
+
+            
             if (HttpContext.Session.GetString("customerData") != null)
             {
                 var data = JsonConvert.DeserializeObject<CustomerData>(HttpContext.Session.GetString("customerData"));
